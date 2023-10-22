@@ -1,0 +1,114 @@
+:root {
+  --bg-color: #edf2ec;
+  --nav-color: #010201;
+  --primary-light-color: #499a18;
+  --primary-dark-color: #e06733;
+  --color-secondary-light: #717171;
+  --color-secondary-dark: #636060;
+}
+
+@font-face {
+  font-family: "Inika";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Inika"), local("Inika-Regular"),
+    url(/assets/fonts/Inika/Inika-Regular.woff2) format("woff2"),
+    url(/assets/fonts/Inika/Inika-Regular.woff) format("woff"),
+    url(/assets/fonts/Inika/Inika-Regular.ttf) format("truetype");
+}
+
+@font-face {  
+  font-family: "Inika";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Inika"), local("Inika-Bold"),
+    url(/assets/fonts/Inika/Inika-Bold.woff2) format("woff2"),
+    url(/assets/fonts/Inika/Inika-Bold.woff) format("woff"),
+    url(/assets/fonts/Inika/Inika-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Inter"), local("Inter-Regular"), 
+    url(/assets/fonts/Inter/Inter-Regular.woff2) format("woff2"),
+    url(/assets/fonts/Inter/Inika-Regular.woff) format("woff"),
+    url(/assets/fonts/Inter/Inter-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Inter"), local("Inter-Bold"), 
+    url(/assets/fonts/Inter/Inter-Bold.woff2) format("woff2"),
+    url(/assets/fonts/Inter/Inika-Regular.woff) format("woff"),
+    url(/assets/fonts/Inter/Inter-Bold.ttf) format("truetype");
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: normal;
+  color: var(--color-secondary-dark);
+}
+
+.wrapper {
+  padding: 0px 109px;
+  margin: 0px auto;
+}
+
+
+.header {
+  height: 134px;
+  padding: 42px 0px;
+  background-color: var(--bg-color);
+}
+
+.header__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: inline-block;
+}
+
+.header__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  margin: 0px;
+  list-style: none;
+}
+
+.header__item {
+  margin-left: 46px;
+}
+
+.header__item a.link_active {
+  font-weight: 700;
+  color: var(--primary-dark-color);
+}
+
+.header__link {
+  font-family: "Inika";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 50px;
+  color: var(--nav-color);
+  text-decoration: none;
+}
