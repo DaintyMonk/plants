@@ -316,7 +316,7 @@ button:hover {
 
 /*-------prices section start-------*/
 
-.prices {
+#prices {
   padding: 40px 0px 115px;
 }
 
@@ -387,10 +387,6 @@ button:hover {
   height: 16px;
 }
 
-.accordion__content {
-
-}
-
 .prices__text-block {
   display: flex;
   flex-direction: column;
@@ -431,3 +427,70 @@ button:hover {
   height: 175px;
 }
 /*-------prices section end-------*/
+
+/*-------contacts section start-------*/
+
+#contacts {
+  height: 550px;
+  background: var(--bg-color);
+}
+
+.contacts__wrapper {
+  padding-top: 53px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts__image {
+  width: 400px;
+  height: 497px;
+}
+
+.contacts__title {
+  margin: 8px 0px 0px;
+  max-width: 195px;
+  max-height: 51px;
+  font-family: "Inika";
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-light-color);
+}
+
+.contacts__dropdown {
+  margin-top: 95px;
+  width: 450px;
+  height: 50px;
+  background: #D6E7D2;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 35px 5px 20px;
+}
+
+.dropdown__text {
+  width: 204px;
+  height: 40px;
+  line-height: 40px;
+  letter-spacing: 1px;
+  color: var(--color-secondary-light);
+}
+
+.dropdown__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: 16px;
+  height: 16px;
+}
+
+.dropdown-image {
+  width: 16px;
+  height: 16px;
+}
+
+/*-------contacts section end-------*/
