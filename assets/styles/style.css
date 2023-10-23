@@ -5,6 +5,10 @@
   --primary-dark-color: #e06733;
   --color-secondary-light: #717171;
   --color-secondary-dark: #636060;
+  --border-color: #e3e1d5;
+  --accordion-color: #d6e7d2;
+
+  --border: 1px solid var(--border-color)
 }
 
 @font-face {
@@ -64,18 +68,17 @@ body {
 }
 
 body button {
-  width: 158px;
-  height: 44px;
   border-radius: 10px;
   border: 2px solid var(--primary-dark-color);
-  background: rgba(224, 103, 51, 0);
+  background-color: rgba(224, 103, 51, 0);
   font-size: 16px;
   line-height: 20px;
   color: #000;
+  cursor: pointer;
 }
 
 button:hover {
-  background: var(--primary-dark-color);
+  background-color: var(--primary-dark-color);
   color: #fff;
 }
 
@@ -131,6 +134,11 @@ button:hover {
   text-decoration: none;
 }
 
+.header__logo-img {
+  width: 20px;
+  height: 20px;
+}
+
 /*-------header end-------*/
 
 /*-------welcome section start-------*/
@@ -169,9 +177,14 @@ button:hover {
 }
 
 .welcome__text {
-  max-height: 105px ;
+  max-height: 105px;
   margin: 0 0 48px;
   line-height: 35px;
+}
+
+.welcome__button {
+  width: 158px;
+  height: 44px;
 }
 
 /*-------welcome section end-------*/
@@ -254,6 +267,8 @@ button:hover {
   margin: 29px 38px 0px 0px;
   border-radius: 5px;
   border: 1px solid var(--primary-dark-color);
+  font-family: "Inika";
+  color: var(--primary-dark-color);
 }
 
 .service__buttons_list .button_active {
@@ -279,7 +294,7 @@ button:hover {
 .service__card-block {
   height: 100px;
   border-radius: 0px 0px 20px 20px;
-  border: 1px solid #e3e1d5;
+  border: var(--border);
 }
 
 .service__img-text {
@@ -296,3 +311,123 @@ button:hover {
   font-size: 16px;
   line-height: 20px;
 }
+
+/*-------service section end-------*/
+
+/*-------prices section start-------*/
+
+.prices {
+  padding: 40px 0px 115px;
+}
+
+.prices__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.prices__accordion-block {
+  width: 332px;
+}
+
+.prices__title {
+  max-width: 135px;
+  margin: 0px 0px 60px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+}
+
+.prices__accordion-lists {
+  border-radius: 20px;
+  border: var(--border);
+}
+
+.prices__accordion {
+  width: 250px;
+  height: 50px;
+  border-radius: 20px;
+  background: var(--bg-color);
+  margin: 0px 41px 32px;
+}
+
+.prices__accordion:first-child {
+  margin-top: 34px;
+}
+
+.prices__accordion:last-child {
+  margin-bottom: 34px;
+}
+
+.accordion__container {
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion__text {
+  max-width: 100px;
+  height: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #000;
+}
+
+.accordion__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: 16px;
+  height: 16px;
+}
+
+.accordion__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.accordion__content {
+
+}
+
+.prices__text-block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: end;
+}
+
+.prices__text {
+  max-width: 452px;
+  margin: 0px 0px 38px;
+  text-align: right;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  color: #000;
+}
+
+.prices__text span {
+  color: var(--primary-light-color);
+}
+
+.prices__button {
+  width: 162px;
+  height: 50px;
+  margin-bottom: 39px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-dark-color);
+  font-family: "Inika";
+  font-style: 20px;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--primary-dark-color);
+}
+
+.prices__img {
+  width: 152px;
+  height: 175px;
+}
+/*-------prices section end-------*/
