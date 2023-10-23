@@ -59,7 +59,7 @@ body {
   font-style: normal;
   font-size: 20px;
   line-height: 1.2;
-  font-weight: normal;
+  font-weight: 400;
   color: var(--color-secondary-dark);
 }
 
@@ -85,8 +85,9 @@ button:hover {
   margin: 0px auto;
 }
 
+/*-------header end-------*/
 
-.header {
+#header {
   height: 134px;
   padding: 42px 0px;
   background-color: var(--bg-color);
@@ -130,6 +131,10 @@ button:hover {
   text-decoration: none;
 }
 
+/*-------header end-------*/
+
+/*-------welcome section start-------*/
+
 .welcome {
   height: 532px;
   padding: 62px 0px 63px;
@@ -147,11 +152,11 @@ button:hover {
 }
 
 .welcome__container {
-  width: 549px;
+  max-width: 549px;
 }
 
 .welcome__title {
-  height: 101px;
+  max-height: 101px;
   margin: 36px 0px 42px;
   font-size: 45px;
   font-weight: 700;
@@ -164,7 +169,56 @@ button:hover {
 }
 
 .welcome__text {
-  height: 105px ;
+  max-height: 105px ;
   margin: 0 0 48px;
   line-height: 35px;
 }
+
+/*-------welcome section end-------*/
+
+/*-------about section start-------*/
+
+#about {
+  height: 479px;
+  padding: 93px 0px 94px;
+}
+
+.about__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about__container {
+  width: 605px;
+}
+
+.about__title {
+  max-width: 463px;
+  max-height: 102px;
+  margin: 68px 0px 40px;
+  font-family: Inika;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--primary-dark-color);
+}
+
+.about__title span {
+  color: var(--primary-light-color);
+}
+
+.about__text {
+  height: 208px;
+  margin: 0px;
+  line-height: 30px;
+}
+
+.about__img {
+  width: 464px;
+  height: 479px;
+}
+
+/*-------about section end-------*/
+
+/*-------about section end-------*/
+
