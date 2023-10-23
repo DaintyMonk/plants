@@ -494,3 +494,59 @@ button:hover {
 }
 
 /*-------contacts section end-------*/
+
+/*-------footer start-------*/
+
+.footer {
+  height: 130px;
+}
+
+.footer__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0px;
+}
+
+.footer__data {
+  margin-right: 20px;
+  line-height: 50px;
+  color: #000;
+}
+
+.footer__data:last-child {
+  margin-right: 0px;
+}
+
+.footer__text {
+  width: 211px;
+  line-height: 50px;
+  color: #000;
+}
+
+.footer__social-list {
+  display: flex;
+  align-items: center;
+}
+
+.footer__social-link {
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.footer__social-link:last-child {
+  margin-right: 0px;
+}
+
+.footer__social-link i {
+  text-align: center;
+  font-size: 32px;
+}
+
+.footer__social-icon {
+  width: 32px;
+  height: 32px;
+  color: #000;
+}
+
+/*-------footer end-------*/
