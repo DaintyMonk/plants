@@ -99,6 +99,7 @@ body {
   font-size: var(--btn-f-size-rounded);
   line-height: 20px;
   color: #000;
+  cursor: pointer;
 }
 
 .btn:hover, .btn-rounded:hover {
@@ -392,9 +393,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
   width: 16px;
   height: 16px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .accordion__icon {
@@ -489,9 +492,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
   width: 16px;
   height: 16px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .dropdown-image {
@@ -534,13 +539,19 @@ body {
   align-items: center;
 }
 
-.footer__social-link {
+.footer__social-item {
+  width: 32px;
+  height: 32px;
   margin-right: 20px;
-  text-decoration: none;
+  list-style: none;
 }
 
-.footer__social-link:last-child {
+.footer__social-item:last-child {
   margin-right: 0px;
+}
+
+.footer__social-link {
+  text-decoration: none;
 }
 
 .footer__social-link i {
