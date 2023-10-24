@@ -3,12 +3,23 @@
   --nav-color: #010201;
   --primary-light-color: #499a18;
   --primary-dark-color: #e06733;
-  --color-secondary-light: #717171;
-  --color-secondary-dark: #636060;
+  --secondary-light-color: #717171;
+  --secondary-dark-color: #636060;
   --border-color: #e3e1d5;
   --accordion-color: #d6e7d2;
+  --btn-bg-color: rgba(224, 103, 51, 0);
 
-  --border: 1px solid var(--border-color)
+  --border: 1px solid var(--border-color);
+  --btn-border: solid var(--primary-dark-color);
+
+  --btn-width: 162px;
+  --btn-height: 50px;
+  --btn-width-rounded: 158px;
+  --btn-height-rounded: 44px;
+
+  --btn-f-size: 20px;
+  --btn-f-size-rounded: 16px;
+
 }
 
 @font-face {
@@ -64,41 +75,60 @@ body {
   font-size: 20px;
   line-height: normal;
   font-weight: 400;
-  color: var(--color-secondary-dark);
+  color: var(--secondary-dark-color);
 }
 
-body button {
-  border-radius: 10px;
-  border: 2px solid var(--primary-dark-color);
-  background-color: rgba(224, 103, 51, 0);
+.btn {
+  width: var(--btn-width);
+  height: var(--btn-height);
+  border-radius: 5px;
+  border: 1px var(--btn-border);
+  background: none;
+  font-family: "Inika";
   font-size: 16px;
-  line-height: 20px;
-  color: #000;
+  color: var(--primary-dark-color);
   cursor: pointer;
 }
 
-button:hover {
+.btn-rounded {
+  width: var(--btn-width-rounded);
+  height: var(--btn-height-rounded);
+  border-radius: 10px;
+  border: 2px var(--btn-border);
+  background-color: var(--btn-bg-color);
+  font-size: var(--btn-f-size-rounded);
+  line-height: 20px;
+  color: #000;
+}
+
+.btn:hover, .btn-rounded:hover {
   background-color: var(--primary-dark-color);
   color: #fff;
 }
-
 
 .wrapper {
   padding: 0px 109px;
   margin: 0px auto;
 }
 
+.wrapper_display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper_display-grid {
+  display: grid;
+}
+
 /*-------header start-------*/
 
 #header {
-  height: 134px;
+  min-height: 134px;
   padding: 42px 0px;
   background-color: var(--bg-color);
 }
 
 .header__wrapper {
-  display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -107,7 +137,7 @@ button:hover {
   display: inline-block;
 }
 
-.header__list {
+.header__nav-list {
   display: flex;
   flex-wrap: wrap;
   align-items: end;
@@ -116,22 +146,22 @@ button:hover {
   list-style: none;
 }
 
-.header__item {
+.header__nav-item {
   margin-left: 46px;
 }
 
-.header__item a.link_active {
-  font-weight: 700;
-  color: var(--primary-dark-color);
-}
-
-.header__link {
+.header__nav-link {
   font-family: "Inika";
   font-size: 16px;
   font-weight: 400;
   line-height: 50px;
   color: var(--nav-color);
   text-decoration: none;
+}
+
+.header__nav-link_active {
+  font-weight: 700;
+  color: var(--primary-dark-color);
 }
 
 .header__logo-img {
@@ -144,13 +174,12 @@ button:hover {
 /*-------welcome section start-------*/
 
 .welcome {
-  height: 532px;
+  min-height: 532px;
   padding: 62px 0px 63px;
   background-color: var(--bg-color);
 }
 
 .welcome__wrapper {
-  display: flex;
   justify-content: space-between;
 }
 
@@ -169,7 +198,7 @@ button:hover {
   font-size: 45px;
   font-weight: 700;
   line-height: 50px;
-  color: var(--color-secondary-light);
+  color: var(--secondary-light-color);
 }
 
 .welcome__title span {
@@ -182,11 +211,6 @@ button:hover {
   line-height: 35px;
 }
 
-.welcome__button {
-  width: 158px;
-  height: 44px;
-}
-
 /*-------welcome section end-------*/
 
 /*-------about section start-------*/
@@ -197,7 +221,6 @@ button:hover {
 }
 
 .about__wrapper {
-  display: flex;
   justify-content: space-between;
 }
 
@@ -240,7 +263,6 @@ button:hover {
 }
 
 .service__wrapper {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 55px;
   grid-column-gap: 117px;
@@ -262,13 +284,7 @@ button:hover {
 }
 
 .service__button {
-  width: 161px;
-  height: 50px;
   margin: 29px 38px 0px 0px;
-  border-radius: 5px;
-  border: 1px solid var(--primary-dark-color);
-  font-family: "Inika";
-  color: var(--primary-dark-color);
 }
 
 .service__buttons_list .button_active {
@@ -277,7 +293,7 @@ button:hover {
 }
 
 .service__card {
-  filter: blur(2px);
+  filter: blur(1.5px);
 }
 
 .wrapper .card_active {
@@ -294,7 +310,7 @@ button:hover {
 .service__card-block {
   height: 100px;
   border-radius: 0px 0px 20px 20px;
-  border: var(--border);
+  border: var(--block-border);
 }
 
 .service__img-text {
@@ -321,7 +337,6 @@ button:hover {
 }
 
 .prices__wrapper {
-  display: flex;
   justify-content: space-between;
 }
 
@@ -339,7 +354,7 @@ button:hover {
 
 .prices__accordion-lists {
   border-radius: 20px;
-  border: var(--border);
+  border: var(--block-border);
 }
 
 .prices__accordion {
@@ -410,16 +425,8 @@ button:hover {
 }
 
 .prices__button {
-  width: 162px;
-  height: 50px;
   margin-bottom: 39px;
-  border-radius: 5px;
-  border: 1px solid var(--primary-dark-color);
-  font-family: "Inika";
-  font-style: 20px;
   font-weight: 700;
-  line-height: normal;
-  color: var(--primary-dark-color);
 }
 
 .prices__img {
@@ -436,9 +443,8 @@ button:hover {
 }
 
 .contacts__wrapper {
-  padding-top: 53px;
-  display: flex;
   justify-content: space-between;
+  padding-top: 53px;
 }
 
 .contacts__image {
@@ -476,7 +482,7 @@ button:hover {
   height: 40px;
   line-height: 40px;
   letter-spacing: 1px;
-  color: var(--color-secondary-light);
+  color: var(--secondary-light-color);
 }
 
 .dropdown__button {
@@ -499,13 +505,12 @@ button:hover {
 
 .footer {
   height: 130px;
+  padding: 40px 0px;
 }
 
 .footer__wrapper {
-  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 0px;
 }
 
 .footer__data {
