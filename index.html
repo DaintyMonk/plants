@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plants</title>
-    <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="./assets/styles/normalize.css">
-    <link rel="stylesheet" href="/assets/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
   </head>
 
   <body>
@@ -17,14 +17,14 @@
           <div class="header__logo">
             <a href="/" class="header__logo-link">
               <img class="header__logo-img"
-                   src="/assets/images/header/logo_vector.svg"
+                   src="./assets/images/header/logo_vector.svg"
                    alt="logo"
                    width="22"
                    height="22"
               >
             </a>
           </div>
-          <span>Plants</span>
+          <span class="header__nav-text">Plants</span>
         </div>
         <nav class="header__nav">
           <ul class="header__nav-list">
@@ -51,12 +51,14 @@
     <main class="main">
       <section class="welcome">
         <div class="wrapper wrapper_display-flex welcome__wrapper">
-          <img class="welcome__img"
-               src="/assets/images/welcome/leafs.png"
-               alt="leafs"
-               width="462"
-               height="424"
-          >
+          <div class="welcome__img-block">
+            <img class="welcome__img"
+                 src="./assets/images/welcome/leafs.png"
+                 alt="leafs"
+                 width="462"
+                 height="424"
+            >
+          </div>
           <div class="welcome__container">
             <h1 class="welcome__title">
               We grow <span>plants</span> and give you oxygen
@@ -71,7 +73,7 @@
   
       <section id="about">
         <div class="wrapper wrapper_display-flex about__wrapper">
-          <div class="about__container">
+          <div class="about__text-block">
             <h2 class="about__title">
               <span>We are</span> professional experienced <span>gardeners</span>
             </h2>
@@ -79,12 +81,14 @@
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
           </div>
-          <img class="about__img"
-               src="./assets/images/about/houseplant.png"
-               alt="houseplant"
-               width="464"
-               height="479"
-          >
+          <div class="about__img-block">
+            <img class="about__img"
+            src="./assets/images/about/houseplant.png"
+            alt="houseplant"
+            width="700"
+            height="821"
+            >
+          </div>
         </div>
       </section>
       
@@ -96,76 +100,88 @@
             <button class="btn service__button">Lawn</button>
             <button class="btn service__button">Planting</button>
           </div>
-          <div class="service__card card_active">
-            <img class="service__img"
-                 src="./assets/images/service/first.jpg"
-                 alt="first"
-                 width="2731"
-                 height="4096"
-            >
-            <div class="service__card-block">
-              <p class="service__img-text">Garden care</p>
-              <p class="service__img-description">Lorem Ipsum has been the industry</p>
+          <div class="card">
+            <div class="card__img-block">
+              <img class="card__img"
+              src="./assets/images/service/first.jpg"
+              alt="first"
+              width="2731"
+              height="4096"
+              >
+            </div>
+            <div class="card__text-block">
+              <p class="card__img-text">Garden care</p>
+              <p class="card__img-description">Lorem Ipsum has been the industry</p>
             </div>
           </div>
-          <div class="service__card">
-            <img class="service__img" 
-                 src="./assets/images/service/second.jpg"
-                 alt="second"
-                 width="2731"
-                 height="4096"
-            >
-            <div class="service__card-block">
-              <p class="service__img-text">Planting</p>
-              <p class="service__img-description">Lorem Ipsum has been the industry</p>
+          <div class="card">
+            <div class="card__img-block">
+              <img class="card__img" 
+              src="./assets/images/service/second.jpg"
+              alt="second"
+              width="2731"
+              height="4096"
+              >
+            </div>
+            <div class="card__text-block">
+              <p class="card__img-text">Planting</p>
+              <p class="card__img-description">Lorem Ipsum has been the industry</p>
             </div>
           </div>
-          <div class="service__card">
-            <img class="service__img"
-                 src="./assets/images/service/third.jpg"
-                 alt="third"
-                 width="4096"
-                 height="2731"
-            >
-            <div class="service__card-block">
-              <p class="service__img-text">Lawn care</p>
-              <p class="service__img-description">Lorem Ipsum has been the industry</p>
+          <div class="card">
+            <div class="card__img-block">
+              <img class="card__img"
+              src="./assets/images/service/third.jpg"
+              alt="third"
+              width="4096"
+              height="2731"
+              >
+            </div>
+            <div class="card__text-block">
+              <p class="card__img-text">Lawn care</p>
+              <p class="card__img-description">Lorem Ipsum has been the industry</p>
             </div>
           </div>
-          <div class="service__card">
-            <img class="service__img"
-                 src="./assets/images/service/fourth.jpg"
-                 alt="fourth"
-                 width="2731"
-                 height="4096"
-            >
-            <div class="service__card-block">
-              <p class="service__img-text">Lawn care</p>
-              <p class="service__img-description">Lorem Ipsum has been the industry</p>
+          <div class="card">
+            <div class="card__img-block">
+              <img class="card__img"
+              src="./assets/images/service/fourth.jpg"
+              alt="fourth"
+              width="2731"
+              height="4096"
+              >
+            </div>
+            <div class="card__text-block">
+              <p class="card__img-text">Planting</p>
+              <p class="card__img-description">Lorem Ipsum has been the industry</p>
             </div>
           </div>
-          <div class="service__card card_active">
-            <img class="service__img"
-                 src="./assets/images/service/fifth.jpg"
-                 alt="fifth"
-                 width="2731"
-                 height="4096"
-            >
-            <div class="service__card-block">
-              <p class="service__img-text">Garden care</p>
-              <p class="service__img-description">Lorem Ipsum has been the industry</p>
+          <div class="card">
+            <div class="card__img-block">
+              <img class="card__img"
+              src="./assets/images/service/fifth.jpg"
+              alt="fifth"
+              width="2731"
+              height="4096"
+              >
+            </div>
+            <div class="card__text-block">
+              <p class="card__img-text">Garden care</p>
+              <p class="card__img-description">Lorem Ipsum has been the industry</p>
             </div>
           </div>
-          <div class="service__card">
-            <img class="service__img"
-                 src="./assets/images/service/sixth.jpg"
-                 alt="sixth"
-                 width="2731"
-                 height="4096"
-            >
-            <div class="service__card-block">
-              <p class="service__img-text">Planting</p>
-              <p class="service__img-description">Lorem Ipsum has been the industry</p>
+          <div class="card service__card">
+            <div class="card__img-block">
+              <img class="card__img"
+              src="./assets/images/service/sixth.jpg"
+              alt="sixth"
+              width="2731"
+              height="4096"
+              >
+            </div>
+            <div class="card__text-block">
+              <p class="card__img-text">Planting</p>
+              <p class="card__img-description">Lorem Ipsum has been the industry</p>
             </div>
           </div>
         </div>    
@@ -173,10 +189,10 @@
 
       <section id="prices">
         <div class="wrapper wrapper_display-flex prices__wrapper">
-          <div class="prices__accordion-block">
+          <div class="prices__information-block">
             <h2 class="prices__title">Prices</h2>
-            <div class="prices__accordion-lists">
-              <div class="prices__accordion">
+            <div class="prices__accordion-block">
+              <div class="accordion">
                 <div class="accordion__container">
                   <span class="accordion__text">Basics</span>
                   <button class="accordion__button">
@@ -189,7 +205,7 @@
                   </button>
                 </div>
               </div>
-              <div class="prices__accordion">
+              <div class="accordion">
                 <div class="accordion__container">
                   <span class="accordion__text">Standard</span>
                   <button class="accordion__button">
@@ -202,7 +218,7 @@
                   </button>
                 </div>
               </div>
-              <div class="prices__accordion">
+              <div class="accordion">
                 <div class="accordion__container">
                   <span class="accordion__text">Pro care</span>
                   <button class="accordion__button">
@@ -220,31 +236,35 @@
           <div class="prices__text-block">
             <p class="prices__text">Our best <span>gardeners</span> are ready to help you</p>
             <button class="btn prices__button">Contact us</button>
-            <img class="prices__img"
-                 src="./assets/images/prices/leafs.png"
-                 alt="leafs"
-                 width="166"
-                 height="187"
-            >
+            <div class="prices__img-block">
+              <img class="prices__img"
+                   src="./assets/images/prices/leafs.png"
+                   alt="leafs"
+                   width="166"
+                   height="187"
+              >
+            </div>
           </div>
         </div>
       </section>
 
       <section id="contacts">
         <div class="wrapper wrapper_display-flex contacts__wrapper">
-          <img class="contacts__image"
-               src="./assets/images/contacts/contact_woman.png"
-               alt="woman"
-               width="400"
-               height="497"
-          >
+          <div class="contacts__img-block">
+            <img class="contacts__img"
+                 src="./assets/images/contacts/contact_woman.png"
+                 alt="woman"
+                 width="400"
+                 height="497"
+            >
+          </div>
           <h2 class="contacts__title">Contact us</h2>
-          <div class="contacts__dropdown">
+          <div class="dropdown contacts__dropdown">
             <div class="dropdown__container">
               <span class="dropdown__text">City</span>
               <button class="dropdown__button">
-                <img class="dropdown-image"
-                     src="/assets/images/contacts/drop_btn_down.svg"
+                <img class="dropdown-icon"
+                     src="./assets/images/contacts/drop_btn_down.svg"
                      alt="down"
                      width="16"
                      height="16"
@@ -258,11 +278,17 @@
 
     <footer class="footer">
       <div class="wrapper wrapper_display-flex footer__wrapper">
-        <div class="footer__data-list">
-          <span class="footer__data">©</span>
-          <span class="footer__data">2022</span>
-          <span class="footer__data">github</span>
-        </div>
+        <ul class="footer__data-list">
+          <li class="footer__data-item">
+            <span class="footer__data">©</span>
+          </li>
+          <li class="footer__data-item">
+            <span class="footer__data">2022</span>
+          </li>
+          <li class="footer__data-item">
+            <span class="footer__data">github</span>
+          </li>
+        </ul>
         <span class="footer__text">Rolling Scopes School</span>
         <ul class="footer__social-list">
           <li class="footer__social-item">
@@ -289,6 +315,6 @@
       </div>
     </footer>
 
-    <script src="/assets/scripts/main.js"></script>
+    <script src="./assets/scripts/main.js"></script>
   </body>
 </html>
