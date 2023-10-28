@@ -656,4 +656,35 @@ h2 {
   }
 
   /*-------welcome section end-------*/
+
+  /*-------about section start-------*/
+
+  #about {
+    padding: 40px 0 95px;
+  }
+  
+  .about__wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .about__text-block {
+    width: 100%;
+    margin-bottom: 67px;
+  }
+  
+  .about__title {
+    width: 423px;
+    margin: 0 auto 52px;
+    text-align: center;
+  }
+
+  .about__img-block {
+    width: 250px;
+    height: 258px;
+  }
+
+  /*-------about section end-------*/
+
 }
