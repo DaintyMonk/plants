@@ -260,7 +260,7 @@ h2 {
 
 /*-------header start-------*/
 
-#header {
+.header {
   padding: 42px 0;
   background-color: var(--bg-color);
 }
@@ -270,7 +270,8 @@ h2 {
 }
 
 .header__logo-items {
-  margin-top: 10px;
+  display: flex;
+  margin: 10px 0 0 2px;
 }
 
 .header__logo {
@@ -282,6 +283,7 @@ h2 {
 }
 
 .header__nav-text {
+  margin-top: 4px;
   font: 400 16px/normal "Inika";
   color: #000;
 }
@@ -594,6 +596,64 @@ h2 {
 
 /* -------tablet layout start------- */
 
-@media (min-width > 380px) and (max-width < 1440px) {
+@media (min-width: 768px) and (max-width: 1439px) {
+ 
+  h1 {
+    font-size: 35px;
+  }
 
+  h2 {
+    font-size: 35px;
+  }
+
+  .wrapper {
+    width: 768px;
+    padding: 0 50px;
+  }
+
+  /*-------header start-------*/
+
+  .header {
+    padding: 35px 0;
+  }
+
+  .header__wrapper {
+    height: 47px;
+  }
+
+  .header__logo-items {
+    margin-left: 0;
+  }
+
+  /*-------header end-------*/
+
+  /*-------welcome section start-------*/
+  
+  .welcome {
+    padding: 40px 0 70px;
+  }
+
+  .welcome__wrapper {
+    flex-direction: row-reverse;
+  }
+
+  .welcome__img-block {
+    width: 280px;
+    height: 254px;
+  }
+
+  .welcome__container {
+    width: 346px;
+  }
+  
+  .welcome__title {
+    margin: 0 0 30px;
+  }
+  
+  .welcome__text {
+    margin: 0 0 35px 5px;
+    font: 400 16px/25px "Inter";
+  }
+
+  /*-------welcome section end-------*/
 }
