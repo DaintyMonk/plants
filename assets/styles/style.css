@@ -610,6 +610,94 @@ h2 {
     width: 768px;
     padding: 0 50px;
   }
+  
+  .card__img-block {
+    width: 280px;
+  }
+  
+  .card__text-block {
+    width: 280px;
+  }
+  
+  .card__img-text {
+    margin: 10px 0;
+  }
+  
+  .card__img-description {
+    margin: 0 auto;
+    width: 201px;
+  }
+  
+  .accordion {
+    width: 250px;
+    height: 50px;
+    border-radius: 20px;
+    margin: 0 41px 32px;
+  }
+  
+  .accordion:first-child {
+    margin-top: 34px;
+  }
+  
+  .accordion:last-child {
+    margin-bottom: 34px;
+  }
+  
+  .accordion__container {
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .accordion__text {
+    width: 100px;
+    font: 700 20px/20px "Inter";
+  }
+  
+  .accordion__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .accordion__icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .dropdown {
+    width: 450px;
+    height: 50px;
+  }
+  
+  .dropdown__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 35px 5px 20px;
+  }
+  
+  .dropdown__text {
+    width: 204px;
+    font: 400 20px/40px "Inter";
+    letter-spacing: 1px;
+  }
+  
+  .dropdown__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .dropdown-icon {
+    width: 16px;
+    height: 16px;
+  }
 
   /*-------header start-------*/
 
@@ -686,5 +774,34 @@ h2 {
   }
 
   /*-------about section end-------*/
+
+  /*-------service section end-------*/
+
+  #service {
+    padding: 60px 0 70px;
+  }
+  
+  .service__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 38px;
+    grid-column-gap: 107px;
+  }
+  
+  .service__title {
+    display: block;
+    grid-column: span 2;
+    margin: 0 0 5px;
+  }
+  
+  .service__buttons_list {
+    grid-column: span 2;
+    margin: 0 0 2px;
+  }
+  
+  .service__button:last-child {
+    margin-right: 0;
+  }
+
+  /*-------service section end-------*/
 
 }
