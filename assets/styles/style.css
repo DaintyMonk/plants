@@ -606,6 +606,10 @@ h2 {
     font-size: 35px;
   }
 
+  .card {
+    width: 280px;
+  }
+
   .wrapper {
     width: 768px;
     padding: 0 50px;
@@ -783,4 +787,33 @@ h2 {
 
   /*-------prices section end-------*/
 
+  /*-------contact section end-------*/
+
+  .contacts__wrapper {
+    flex-direction: column;
+    padding-top: 40px;
+    align-items: center;
+  }
+  
+  .contacts__img {
+    order: 2;
+    width: 200px;
+    height: 249px;
+    margin-right: 0;
+    margin-left: 20px;
+  }
+  
+  .contacts__title {  
+    order: 0;
+    margin: 0;
+    font-size: 40px;
+  }
+  
+  .contacts__dropdown {
+    order: 1;
+    margin: 98px 0 250px;
+  }
+
+  /*-------contact section end-------*/
+  
 }
