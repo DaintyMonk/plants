@@ -57,6 +57,11 @@
     url(../fonts/Inter/Inter-Bold.ttf) format("truetype");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -100,12 +105,6 @@ h2 {
   display: grid;
 }
 
-.img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .btn {
   width: 162px;
   height: 50px;
@@ -137,30 +136,31 @@ h2 {
   color: #fff;
 }
 
-/*
+
 .card {
-  filter: blur(1.5px);
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  height: 450px;
+  /* filter: blur(1.5px); */
 }
-*/
+
 
 .card_enabled {
   filter: blur(0);
 }
 
-.card__img-block {
-  width: 330px;
-  height: 350px;
-}
-
 .card__img {
+  width: 100%;
+  object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
 
 .card__text-block {
-  width: 330px;
   height: 100px;
-  border-radius: 0 0 20px 20px;
   border: var(--block-border);
+  border-top: 0;
+  border-radius: 0 0 20px 20px;
   text-align: center;
 }
 
@@ -293,17 +293,11 @@ h2 {
   align-items: center;
   justify-content: space-between;
   width: 452px;
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
-.header__nav-item {
+.header__nav-item:not(:first-child) {
   margin-left: 46px;
-}
-
-.header__nav-item:first-child {
-  margin-left: 0;
 }
 
 .header__nav-link {
@@ -335,12 +329,14 @@ h2 {
   justify-content: space-between;
 }
 
-.welcome__img-block {
+.welcome__img {
   width: 449px;
   height: 407px;
+  background-image: url(../images/welcome/leafs.png);
+  background-size: cover;
 }
 
-.welcome__container {
+.welcome__text-block {
   width: 549px;
 }
 
@@ -354,7 +350,7 @@ h2 {
 }
 
 .welcome__text {
-  margin: 0 0 48px;
+  margin-bottom: 48px;
   font: 400 20px/35px "Inter";
   color: var(--secondary-dark-color);
 }
@@ -390,9 +386,11 @@ h2 {
   color: var(--secondary-dark-color);
 }
 
-.about__img-block {
+.about__img {
   width: 464px;
   height: 479px;
+  background-image: url(../images/about/houseplant.png);
+  background-size: cover;
 }
 
 /*-------about section end-------*/
@@ -422,12 +420,8 @@ h2 {
   margin-top: 27px;
 }
 
-.service__button {
+.service__button:not(:last-child) {
   margin-right: 33px;
-}
-
-.service__button:last-child {
-  margin-right: 0;
 }
 
 .service__buttons_list .button_active {
@@ -444,36 +438,42 @@ h2 {
 }
 
 .prices__wrapper {
+  grid-template: 
+    [row1-start] "title text" [row1-end]
+    [row2-start] "accordion text" [row2-end]
+    [row3-start] "accordion text" [row3-end]
+    / auto auto;
   justify-content: space-between;
 }
 
-.prices__information-block {
-  width: 332px;
-}
-
 .prices__title {
-  margin: 0 0 60px;
+  grid-area: title;
+  margin: 0 0 54px;
   font-weight: 700;
   font-family: "Inter";
   color: #000;
 }
 
 .prices__accordion-block {
+  grid-area: accordion;
+  width: 332px;
+  height: 282px;
   border-radius: 20px;
   border: var(--block-border);
 }
 
 .prices__text-block {
+  grid-area: text;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: end;
+  width: 452px;
 }
 
 .prices__text {
-  width: 452px;
-  margin: 0 0 40px;
+  margin-bottom: 40px;
   text-align: right;
   font: 700 40px/50px "Inter";
   color: #000;
@@ -488,9 +488,11 @@ h2 {
   font-weight: 700;
 }
 
-.prices__img-block {
+.prices__img {
   width: 152px;
   height: 175px;
+  background-image: url(../images/prices/leafs.png);
+  background-size: cover;
 }
 
 /*-------prices section end-------*/
@@ -506,14 +508,13 @@ h2 {
   padding-top: 53px;
 }
 
-.contacts__img-block {
+.contacts__img {
   width: 400px;
   height: 497px;
   margin-right: 45px;
-}
-
-.contacts__img {
-  object-position: bottom;
+  background-image: url(../images/contacts/contact_woman.png);
+  background-size: cover;
+  background-position: bottom;
 }
 
 .contacts__title {
@@ -566,11 +567,10 @@ h2 {
 .footer__social-item {
   width: 32px;
   height: 32px;
-  margin-right: 20px;
 }
 
-.footer__social-item:last-child {
-  margin-right: 0;
+.footer__social-item:not(:last-child) {
+  margin-right: 20px;
 }
 
 .footer__social-link {
@@ -609,63 +609,6 @@ h2 {
   .wrapper {
     width: 768px;
     padding: 0 50px;
-  }
-  
-  .card__img-block {
-    width: 280px;
-  }
-  
-  .card__text-block {
-    width: 280px;
-  }
-  
-  .card__img-text {
-    margin: 10px 0;
-  }
-  
-  .card__img-description {
-    margin: 0 auto;
-    width: 201px;
-  }
-  
-  .accordion {
-    width: 250px;
-    height: 50px;
-    border-radius: 20px;
-    margin: 0 41px 32px;
-  }
-  
-  .accordion:first-child {
-    margin-top: 34px;
-  }
-  
-  .accordion:last-child {
-    margin-bottom: 34px;
-  }
-  
-  .accordion__container {
-    padding: 16px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .accordion__text {
-    width: 100px;
-    font: 700 20px/20px "Inter";
-  }
-  
-  .accordion__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-  }
-  
-  .accordion__icon {
-    width: 16px;
-    height: 16px;
   }
   
   .dropdown {
@@ -725,12 +668,12 @@ h2 {
     flex-direction: row-reverse;
   }
 
-  .welcome__img-block {
+  .welcome__img {
     width: 280px;
     height: 254px;
   }
 
-  .welcome__container {
+  .welcome__text-block {
     width: 346px;
   }
   
@@ -768,14 +711,14 @@ h2 {
     text-align: center;
   }
 
-  .about__img-block {
+  .about__img {
     width: 250px;
     height: 258px;
   }
 
   /*-------about section end-------*/
 
-  /*-------service section end-------*/
+  /*-------service section start-------*/
 
   #service {
     padding: 60px 0 70px;
@@ -803,5 +746,41 @@ h2 {
   }
 
   /*-------service section end-------*/
+
+  /*-------prices section start-------*/
+
+  #prices {
+    padding: 40px 0 88px;
+  }
+  
+  .prices__wrapper {
+    grid-template: 
+    [row1-start] "title title" [row1-end]
+    [row2-start] "accordion text" [row2-end]
+    / auto auto;
+    row-gap: 58px;
+  }
+  
+  .prices__title {
+    grid-area: title;
+    width: 136px;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .prices__text-block {
+    width: 296px;
+  }
+  
+  .prices__text {
+    margin-bottom: 28px;
+    font: 700 25px/35px "Inter";
+  }
+
+  .prices__button {
+    margin-bottom: 34px;
+  }
+
+  /*-------prices section end-------*/
 
 }
