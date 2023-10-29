@@ -124,7 +124,6 @@ h2 {
   background-color: var(--btn-bg-color);
   font: 400 16px/20px "Inter";
   line-height: 20px;
-  color: #000;
   cursor: pointer;
 }
 
@@ -202,7 +201,6 @@ h2 {
 .accordion__text {
   width: 100px;
   font: 700 20px/20px "Inter";
-  color: #000;
 }
 
 .accordion__button {
@@ -285,7 +283,6 @@ h2 {
 .header__nav-text {
   margin-top: 4px;
   font: 400 16px/normal "Inika";
-  color: #000;
 }
 
 .header__nav-list {
@@ -451,7 +448,6 @@ h2 {
   margin: 0 0 54px;
   font-weight: 700;
   font-family: "Inter";
-  color: #000;
 }
 
 .prices__accordion-block {
@@ -476,7 +472,6 @@ h2 {
   margin-bottom: 40px;
   text-align: right;
   font: 700 40px/50px "Inter";
-  color: #000;
 }
 
 .prices__text span {
@@ -545,21 +540,20 @@ h2 {
 .footer__data-list {
   display: flex;
   align-items: center;
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
-.footer__data-item {
+.footer__data-item:not(:last-child) {
   margin-right: 20px;
-  color: #000;
+}
+
+.footer__text {
+  margin-left: 20px;
 }
 
 .footer__social-list {
   display: flex;
   align-items: center;
-  margin: 0;
-  padding: 0;
   line-height: normal;
   list-style: none;
 }
@@ -610,40 +604,18 @@ h2 {
     width: 280px;
   }
 
+  .card__img-text {
+    margin: 10px 0 12px;
+  }
+
+  .card__img-description {
+    width: 201px;
+    margin: 0 auto;
+  }
+
   .wrapper {
     width: 768px;
     padding: 0 50px;
-  }
-  
-  .dropdown {
-    width: 450px;
-    height: 50px;
-  }
-  
-  .dropdown__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 35px 5px 20px;
-  }
-  
-  .dropdown__text {
-    width: 204px;
-    font: 400 20px/40px "Inter";
-    letter-spacing: 1px;
-  }
-  
-  .dropdown__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-  }
-  
-  .dropdown-icon {
-    width: 16px;
-    height: 16px;
   }
 
   /*-------header start-------*/
@@ -701,7 +673,6 @@ h2 {
   .about__wrapper {
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
   }
   
   .about__text-block {
@@ -787,7 +758,7 @@ h2 {
 
   /*-------prices section end-------*/
 
-  /*-------contact section end-------*/
+  /*-------contact section start-------*/
 
   .contacts__wrapper {
     flex-direction: column;
@@ -816,4 +787,62 @@ h2 {
 
   /*-------contact section end-------*/
   
+  /*-------footer start-------*/
+
+  .footer {
+    padding: 33px 0 27px;
+  }
+  
+  .footer__wrapper {
+    flex-direction: column;
+    line-height: normal;
+  }
+
+  .footer__data-list {
+    margin-bottom: 16px;
+  }
+
+  .footer__data-item:not(:last-child) {
+    margin-right: 22px;
+  }
+
+  .footer__text {
+    margin-left: 0;
+    margin-bottom: 25px;
+  }
+  
+  .footer__social-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    list-style: none;
+  }
+  
+  .footer__social-item {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .footer__social-item:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  .footer__social-link {
+    text-decoration: none;
+  }
+  
+  .footer__social-link i {
+    text-align: center;
+    font-size: 32px;
+  }
+  
+  .footer__social-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  /*-------footer end-------*/
+
 }
