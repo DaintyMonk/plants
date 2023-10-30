@@ -135,6 +135,22 @@ h2 {
   color: #fff;
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger__bar {
+  width: 40px;
+  height: 2px;
+  margin: 0 auto 6px;
+  transition: all 0.3s ease-in-out;
+  background: var(--secondary-light-color);
+}
+
+.hamburger__bar:last-child {
+  margin-bottom: 0;
+}
 
 .card {
   display: flex;
@@ -272,12 +288,17 @@ h2 {
   margin: 10px 0 0 2px;
 }
 
-.header__logo {
-  display: inline-block;
+.header__logo-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .header__logo-link {
   text-decoration: none;
+}
+
+.header__logo {
+  display: inline-block;
 }
 
 .header__nav-text {
@@ -285,7 +306,7 @@ h2 {
   font: 400 16px/normal "Inika";
 }
 
-.header__nav-list {
+.header__nav-menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -306,11 +327,6 @@ h2 {
 .header__nav-link_active {
   font-weight: 700;
   color: var(--primary-dark-color);
-}
-
-.header__logo-icon {
-  width: 20px;
-  height: 20px;
 }
 
 /*-------header end-------*/
@@ -591,7 +607,7 @@ h2 {
 /* -------tablet layout start------- */
 
 @media (min-width: 768px) and (max-width: 1439px) {
- 
+
   h1 {
     font-size: 35px;
   }
@@ -600,24 +616,24 @@ h2 {
     font-size: 35px;
   }
 
-  .card {
-    width: 280px;
-  }
-
-  .card__img-text {
-    margin: 10px 0 12px;
-  }
-
-  .card__img-description {
-    width: 201px;
-    margin: 0 auto;
-  }
-
   .wrapper {
     width: 768px;
     padding: 0 50px;
   }
 
+  .card {
+    width: 280px;
+  }
+  
+  .card__img-text {
+    margin: 10px 0 12px;
+  }
+  
+  .card__img-description {
+    width: 201px;
+    margin: 0 auto;
+  }
+  
   /*-------header start-------*/
 
   .header {
@@ -846,3 +862,104 @@ h2 {
   /*-------footer end-------*/
 
 }
+
+/* -------tablet layout end------- */
+
+/* ----------------------------------------- */
+
+/* -------mobile layout start------- */
+
+@media (max-width: 767px) {
+
+  h1 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 380px;
+    padding: 0 25px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger__bar {
+    display: block;
+  }
+
+  .hamburger.active .hamburger__bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .hamburger__bar:nth-child(3) {
+    opacity: 0;
+  }
+
+  .hamburger.active .hamburger__bar:nth-child(1) {
+    transform: rotate(45deg) translateX(8px) translateY(8px); 
+  }  
+
+  .hamburger.active .hamburger__bar:nth-child(4) {
+    transform: rotate(-45deg) translateX(8px) translateY(-8px); 
+  }
+
+  .card {
+    width: 279px;
+  }
+  
+  .card__img-text {
+    margin: 10px 0 12px;
+  }
+  
+  .card__img-description {
+    width: 201px;
+    margin: 0 auto;
+  }
+
+/*-------header start-------*/
+
+  .header {
+    padding: 34px 0 38px;
+  }
+
+  .header__wrapper {
+    height: 24px;
+  }
+
+  .header__logo-items {
+    margin-top: 2px;
+    margin-left: 0;
+    z-index: 1;
+  }
+
+  .header__nav-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    flex-direction: column;
+    background: var(--bg-color);
+    transition: 0.2s ease-in-out;
+  }
+
+  .header__nav-menu.active {
+    top: 96px;
+  }
+
+  .header__nav-item:not(:first-child) {
+    margin-left: 0;
+  }
+
+/*-------header end-------*/
+
+
+
+/* -------mobile layout end------- */
