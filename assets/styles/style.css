@@ -269,6 +269,9 @@ h2 {
 /*-------header start-------*/
 
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding: 42px 0;
   background-color: var(--bg-color);
 }
@@ -328,6 +331,7 @@ h2 {
 /*-------welcome section start-------*/
 
 .welcome {
+  margin-top: 134px;
   padding: 62px 0 63px;
   background-color: var(--bg-color);
 }
@@ -647,6 +651,7 @@ h2 {
   /*-------welcome section start-------*/
   
   .welcome {
+    margin-top: 117px;
     padding: 40px 0 70px;
   }
 
@@ -954,9 +959,6 @@ h2 {
 /*-------header start-------*/
 
   .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
     padding: 34px 0 38px;
   }
 
