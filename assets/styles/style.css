@@ -506,12 +506,12 @@ h2 {
 /*-------contacts section start-------*/
 
 #contacts {
+  padding-top: 53px;
   background: var(--bg-color);
 }
 
 .contacts__wrapper {
   justify-content: space-between;
-  padding-top: 53px;
 }
 
 .contacts__img {
@@ -766,9 +766,12 @@ h2 {
 
   /*-------contact section start-------*/
 
+  .contacts {
+    padding-top: 40px;
+  }
+
   .contacts__wrapper {
     flex-direction: column;
-    padding-top: 40px;
     align-items: center;
   }
   
@@ -937,6 +940,15 @@ h2 {
   
   .accordion__text {
     font-size: 15px;
+  }
+
+  .dropdown {
+    width: 300px;
+    height: 50px;
+  }
+  
+  .dropdown__container {
+    padding: 5px 20px;
   }
 
 /*-------header start-------*/
@@ -1133,6 +1145,37 @@ h2 {
 }
 
 /*-------prices section end-------*/
+
+/*-------contacts section start-------*/
+
+#contacts {
+  padding-top: 25px;
+}
+
+.contacts__wrapper {
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacts__img {
+  order: 2;
+  width: 100px;
+  height: 124px;
+  margin-right: 0;
+}
+
+.contacts__title {  
+  order: 0;
+  margin: 0;
+  font-size: 25px;
+}
+
+.contacts__dropdown {
+  order: 1;
+  margin: 82px 0 132px;
+}
+
+/*-------contacts section end-------*/
 
 
 /* -------mobile layout end------- */
