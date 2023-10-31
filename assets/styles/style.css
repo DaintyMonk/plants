@@ -245,7 +245,6 @@ h2 {
 }
 
 .dropdown__text {
-  width: 204px;
   font: 400 20px/40px "Inter";
   letter-spacing: 1px;
   color: var(--secondary-light-color);
@@ -912,7 +911,8 @@ h2 {
   }
 
   .card {
-    width: 279px;
+    width: 100%;
+    max-width: 279px;
   }
   
   .card__img-text {
@@ -943,8 +943,8 @@ h2 {
   }
 
   .dropdown {
-    width: 300px;
-    height: 50px;
+    width: 100%;
+    max-width: 300px;
   }
   
   .dropdown__container {
@@ -1040,6 +1040,7 @@ h2 {
 }
 
 .about__title {
+  width: 100%;
   max-width: 288px;
   margin: 0 auto 16px;
   text-align: center;
@@ -1070,6 +1071,7 @@ h2 {
 
 .service__title {
   grid-column: span 1;
+  width: 100%;
   max-width: 187px;
   margin-bottom: 6px;
 }
@@ -1126,7 +1128,8 @@ h2 {
 
 .prices__text-block {
   align-items: center;
-  width: 230px;
+  width: 100%;
+  max-width: 230px;
 }
 
 .prices__text {
