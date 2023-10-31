@@ -404,6 +404,7 @@ h2 {
   height: 479px;
   background-image: url(../images/about/houseplant.png);
   background-size: cover;
+  background-position: center;
 }
 
 /*-------about section end-------*/
@@ -1001,5 +1002,38 @@ h2 {
 
 /*-------welcome section end-------*/
 
+/*-------about section end-------*/
+
+#about {
+  padding: 30px 0 31px;
+}
+
+.about__wrapper {
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__text-block {
+  width: 100%;
+  margin-bottom: 3px;
+}
+
+.about__title {
+  max-width: 288px;
+  margin: 0 auto 16px;
+  text-align: center;
+}
+
+.about__text {
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.about__img {
+  width: 150px;
+  height: 147px;
+}
+
+/*-------about section end-------*/
 
 /* -------mobile layout end------- */
