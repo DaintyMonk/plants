@@ -886,6 +886,18 @@ h2 {
     padding: 0 25px;
   }
 
+  .btn {
+    width: 162px;
+    height: 50px;
+    font: 400 20px/normal "Inika"; 
+  }
+  
+  .btn-rounded {
+    width: 100px;
+    height: 34px;
+    font-size: 10px;
+  }
+
   .hamburger {
     display: block;
   }
@@ -960,6 +972,34 @@ h2 {
 
 /*-------header end-------*/
 
+/*-------welcome section start-------*/
+
+.welcome {
+  padding: 24px 0;
+}
+
+.welcome__wrapper {
+  flex-direction: column
+}
+
+.welcome__img {
+  display: none;
+}
+
+.welcome__text-block {
+  width: 100%;
+}
+
+.welcome__title {
+  margin: 2px 0 20px;
+}
+
+.welcome__text {
+  margin-bottom: 26px;
+  font: 400 16px/25px "Inter";
+}
+
+/*-------welcome section end-------*/
 
 
 /* -------mobile layout end------- */
