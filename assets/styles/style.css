@@ -524,7 +524,7 @@ h2 {
 }
 
 .contacts__title {
-  margin: 8px 0 0;
+  margin: 7px 0 0;
   font-weight: 700;
   font-family: "Inika";
   color: var(--primary-light-color);
@@ -766,7 +766,7 @@ h2 {
 
   /*-------contact section start-------*/
 
-  .contacts {
+  #contacts {
     padding-top: 40px;
   }
 
@@ -1177,5 +1177,62 @@ h2 {
 
 /*-------contacts section end-------*/
 
+/*-------footer start-------*/
+
+.footer {
+  padding: 22px 0 16px;
+}
+
+.footer__wrapper {
+  flex-direction: column;
+  line-height: normal;
+}
+
+.footer__data-list {
+  margin-bottom: 16px;
+}
+
+.footer__data-item:not(:last-child) {
+  margin-right: 22px;
+}
+
+.footer__text {
+  margin-left: 0;
+  margin-bottom: 12px;
+}
+
+.footer__social-list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  list-style: none;
+}
+
+.footer__social-item {
+  width: 32px;
+  height: 32px;
+}
+
+.footer__social-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.footer__social-link {
+  text-decoration: none;
+}
+
+.footer__social-link i {
+  text-align: center;
+  font-size: 32px;
+}
+
+.footer__social-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/*-------footer end-------*/
 
 /* -------mobile layout end------- */
