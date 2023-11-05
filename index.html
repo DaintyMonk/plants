@@ -9,27 +9,25 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
   </head>
 
-  <body>
+  <body id="top">
 
-    <header class="header">
-      <div class="wrapper wrapper_display-flex header__wrapper">
+    <header class="bg-neutral-200 header">
+      <div class="wrapper flex header__wrapper">
         <div class="header__logo-items">
-          <div class="header__logo">
-            <a href="/" class="header__logo-link">
-              <img class="header__logo-icon"
-                   src="./assets/images/header/logo_vector.svg"
-                   alt="logo"
-                   width="22"
-                   height="22"
-              >
-            </a>
-          </div>
+          <a href="#top" class="header__logo-link">
+            <img class="header__logo-icon"
+                  src="./assets/images/header/logo_vector.svg"
+                  alt="logo"
+                  width="22"
+                  height="22"
+            >
+          </a>
           <span class="header__nav-text">Plants</span>
         </div>
         <nav class="header__nav">
-          <ul class="header__nav-menu">
+          <ul class="header__nav-menu" role="list">
             <li class="header__nav-item">
-              <a class="header__nav-link" href="#">Home</a>
+              <a class="header__nav-link" href="#top">Home</a>
             </li>
             <li class="header__nav-item">
               <a class="header__nav-link" href="#about">About us</a>
@@ -55,26 +53,26 @@
     </header>
 
     <main class="main">
-      <section class="welcome">
-        <div class="wrapper wrapper_display-flex welcome__wrapper">
+      <section class="bg-neutral-200 welcome">
+        <div class="wrapper flex welcome__wrapper">
           <div class="welcome__img"></div>
           <div class="welcome__text-block">
-            <h1 class="welcome__title">
-              We grow <span>plants</span> and give you oxygen
+            <h1 class="primary-heading welcome__title">
+              We grow <span class="title-accent">plants</span> and give you oxygen
             </h1>
             <p class="welcome__text">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
             </p>
-            <button class="btn-rounded welcome__btn">LEARN MORE</button>
+            <button class="btn btn_rounded welcome__btn">LEARN MORE</button>
           </div>
         </div>
       </section>
   
-      <section id="about">
-        <div class="wrapper wrapper_display-flex about__wrapper">
+      <section class="about" id="about">
+        <div class="wrapper flex about__wrapper">
           <div class="about__text-block">
-            <h2 class="about__title">
-              <span>We are</span> professional experienced <span>gardeners</span>
+            <h2 class="secondary-heading about__title">
+              <span class="title-accent">We are</span> professional experienced <span class="title-accent">gardeners</span>
             </h2>
             <p class="about__text">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
@@ -84,9 +82,9 @@
         </div>
       </section>
       
-      <section id="service">
-        <div class="wrapper wrapper_display-grid service__wrapper">
-          <h2 class="service__title">Service and our projects</h2>
+      <section class="bg-neutral-200 service" id="service">
+        <div class="wrapper grid service__wrapper">
+          <h2 class="secondary-heading service__title">Service and our projects</h2>
           <div class="service__buttons_list">
             <button class="btn service__button">Gardens</button>
             <button class="btn service__button">Lawn</button>
@@ -167,9 +165,9 @@
         </div>    
       </section>
 
-      <section id="prices">
-        <div class="wrapper wrapper_display-grid prices__wrapper">
-          <h2 class="prices__title">Prices</h2>
+      <section class="prices" id="prices">
+        <div class="wrapper grid prices__wrapper">
+          <h2 class="secondary-heading prices__title">Prices</h2>
           <div class="prices__accordion-block">
             <div class="accordion">
               <div class="accordion__container">
@@ -219,10 +217,10 @@
         </div>
       </section>
 
-      <section id="contacts">
-        <div class="wrapper wrapper_display-flex contacts__wrapper">
+      <section class="bg-neutral-200 contacts" id="contacts">
+        <div class="wrapper flex contacts__wrapper">
           <div class="contacts__img"></div>
-          <h2 class="contacts__title">Contact us</h2>
+          <h2 class="secondary-heading contacts__title">Contact us</h2>
           <div class="dropdown contacts__dropdown">
             <div class="dropdown__container">
               <span class="dropdown__text">City</span>
@@ -241,7 +239,7 @@
     </main>
 
     <footer class="footer">
-      <div class="wrapper wrapper_display-flex footer__wrapper">
+      <div class="wrapper flex footer__wrapper">
         <ul class="footer__data-list">
           <li class="footer__data-item">
             <span class="footer__data">©</span>

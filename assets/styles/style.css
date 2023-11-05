@@ -1,17 +1,82 @@
-:root {
-  --bg-color: #edf2ec;
-  --nav-color: #010201;
-  --primary-light-color: #499a18;
-  --primary-dark-color: #e06733;
-  --secondary-light-color: #717171;
-  --secondary-dark-color: #636060;
-  --border-color: #e3e1d5;
-  --accordion-color: #d6e7d2;
-  --btn-bg-color: rgba(224, 103, 51, 0);
+/* 
+CSS TABLE OF CONTENTS
 
-  --block-border: 1px solid var(--border-color);
-  --btn-border: solid var(--primary-dark-color);
+1.0 - Globals
+2.0 - Fonts
+3.0 - Resets
+4.0 - Utilities
+5.0 - Main
+  5.1 - Desktop
+    5.1.1 - Components
+    5.1.2 - Header
+    5.1.3 - Welcome section
+    5.1.4 - About section
+    5.1.5 - Service section
+    5.1.6 - Prices section
+    5.1.7 - Contacts section
+    5.1.8 - Footer
+  5.2 - Tablet
+    5.1.1 - Components
+    5.2.2 - Header
+    5.2.3 - Welcome section
+    5.2.4 - About section
+    5.2.5 - Service section
+    5.2.6 - Prices section
+    5.2.7 - Contacts section
+    5.2.8 - Footer
+  5.3 - Mobile
+    5.1.1 - Components
+    5.3.2 - Header
+    5.3.3 - Welcome section
+    5.3.4 - About section
+    5.3.5 - Service section
+    5.3.6 - Prices section
+    5.3.7 - Contacts section
+    5.3.8 - Footer
+*/
+
+
+/* ------- 1.0 - Globals ------- */
+
+:root {
+  /* Colors */
+  --clr-primary-400: hsl(0, 0%, 44%); /* #717171 */
+  --clr-primary-700: hsl(0, 2%, 38%); /* #636060 */
+
+  --clr-accent-300: hsl(88, 61%, 75%); /* #c1e698 */
+  --clr-accent-400: hsl(18, 74%, 54%); /* #e06733 */
+  --clr-accent-700: hsl(97, 73%, 35%); /* #499a18 */
+
+  --clr-neutral-100: hsl(0, 0%, 100%); /* #ffffff */
+  --clr-neutral-200: hsl(110, 19%, 94%); /* #edf2ec */
+  --clr-neutral-300: hsl(51, 20%, 86%); /* #e3e1d5 */
+  --clr-neutral-400: hsl(109, 30%, 86%); /* d6e7d2 */
+  --clr-neutral-600: hsl(120, 33%, 1%); /* #010201 */
+  --clr-neutral-700: hsl(0, 0%, 0%); /* #000000 */
+
+  /* Font families */
+  --ff-primary: "Inter", sans-serif;
+  --ff-secondary: "Inika", sans-serif;
+
+  /* Font weight */
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Font sizes */
+  --fs-300: 0.625rem;
+  --fs-400: 0.75rem;
+  --fs-500: 0.875rem;
+  --fs-600: 1rem;
+  --fs-700: 1.25rem;
+  --fs-800: 2.5rem;
+  --fs-900: 2.8125rem;
+  
+  /* Borders */
+  --bd-block: 1px solid var(--clr-neutral-300);
+  --bd-btn: solid var(--clr-accent-400);
 }
+
+/* ------- 2.0 - Fonts ------- */
 
 @font-face {
   font-family: "Inika";
@@ -57,11 +122,9 @@
     url(../fonts/Inter/Inter-Bold.ttf) format("truetype");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
+/* ------- 3.0 - Resets ------- */
 
+/* Box sizing rules */
 html {
   box-sizing: border-box;
 }
@@ -72,23 +135,96 @@ html {
   box-sizing: inherit;
 }
 
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
 body {
-  font-family: "Inika", "Inter", sans-serif;
+  height: 100vh;
+}
+
+/* Set core body defaults */
+body {
+  font-family: var(--ff-primary), var(--ff-secondary), sans-serif;
   font-style: normal;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
-/* ----------------------------------------- */
-
-/* -------desktop layout start------- */
-
-h1 {
-  font: 700 45px/50px "Inter";
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
 
-h2 {
-  font: 400 40px/normal "Inika";
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
 }
 
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------- 4.0 - Utilities ------- */
+
+.bg-neutral-200 {
+  background-color: var(--clr-neutral-200);
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.primary-heading {
+  font: var(--fw-bold) var(--fs-900)/50px var(--ff-primary);
+}
+
+.secondary-heading {
+  font: var(--fw-regular) var(--fs-800)/normal var(--ff-secondary);
+}
+
+.title-accent {
+  color: var(--clr-accent-700);
+}
+
+/* ------- 5.0 - Main ------- */
+/* ------- 5.1 - Desktop ------- */
+
+/* ------- 5.1.1 - Components ------- */
 
 .wrapper {
   width: 1440px;
@@ -96,42 +232,29 @@ h2 {
   padding: 0 109px;
 }
 
-.wrapper_display-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.wrapper_display-grid {
-  display: grid;
-}
-
 .btn {
   width: 162px;
   height: 50px;
   border-radius: 5px;
-  border: 1px var(--btn-border);
+  border: 1px var(--bd-btn);
   background: transparent;
-  font: 400 20px/normal "Inika"; 
-  color: var(--primary-dark-color);
+  font: var(--fw-regular) var(--fs-700)/normal var(--ff-secondary);
+  color: var(--clr-accent-400);
   cursor: pointer;
 }
 
-.btn-rounded {
+.btn_rounded {
   width: 158px;
   height: 44px;
   border-radius: 10px;
-  border: 2px var(--btn-border);
-  background-color: var(--btn-bg-color);
-  font: 400 16px/20px "Inter";
-  line-height: 20px;
-  cursor: pointer;
+  border-width: 2px;
+  font: var(--fw-regular) var(--fs-600)/20px var(--ff-primary);
 }
 
 .btn:hover,
-.btn-rounded:hover,
-.btn:focus-visible,
-.btn-rounded:focus-visible {
-  background-color: var(--primary-dark-color);
+.btn:active,
+.btn:focus-visible {
+  background-color: var(--clr-accent-400);
   color: #fff;
 }
 
@@ -145,7 +268,7 @@ h2 {
   height: 2px;
   margin: 0 auto 6px;
   transition: all 0.3s ease-in-out;
-  background: var(--secondary-light-color);
+  background: var(--clr-primary-400);
 }
 
 .hamburger__bar:last-child {
@@ -160,8 +283,7 @@ h2 {
   /* filter: blur(1.5px); */
 }
 
-
-.card_enabled {
+.card_active {
   filter: blur(0);
 }
 
@@ -173,7 +295,7 @@ h2 {
 
 .card__text-block {
   height: 100px;
-  border: var(--block-border);
+  border: var(--bd-block);
   border-top: 0;
   border-radius: 0 0 20px 20px;
   text-align: center;
@@ -182,20 +304,20 @@ h2 {
 .card__img-text {
   margin: 10px 0 14px;
   font: 700 20px/20px "Inter";
-  color: var(--primary-dark-color);
+  color: var(--clr-accent-400);
 }
 
 .card__img-description {
   margin: 0;
   font: 400 16px/20px "Inter";
-  color: var(--secondary-light-color);
+  color: var(--clr-primary-400);
 }
 
 .accordion {
   width: 250px;
   height: 50px;
   border-radius: 20px;
-  background: var(--bg-color);
+  background: var(--clr-neutral-200);
   margin: 0 auto 32px;
 }
 
@@ -247,7 +369,7 @@ h2 {
 .dropdown__text {
   font: 400 20px/40px "Inter";
   letter-spacing: 1px;
-  color: var(--secondary-light-color);
+  color: var(--clr-primary-400);
 }
 
 .dropdown__button {
@@ -266,14 +388,13 @@ h2 {
   height: 16px;
 }
 
-/*-------header start-------*/
+/* ------- 5.1.2 - Header ------- */
 
 .header {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 42px 0;
-  background-color: var(--bg-color);
 }
 
 .header__wrapper {
@@ -294,13 +415,9 @@ h2 {
   text-decoration: none;
 }
 
-.header__logo {
-  display: inline-block;
-}
-
 .header__nav-text {
   margin-top: 4px;
-  font: 400 16px/normal "Inika";
+  font: var(--fw-regular) var(--fs-600)/normal var(--ff-secondary);
 }
 
 .header__nav-menu {
@@ -308,32 +425,25 @@ h2 {
   align-items: center;
   justify-content: space-between;
   width: 452px;
-  list-style: none;
-}
-
-.header__nav-item:not(:first-child) {
-  margin-left: 46px;
 }
 
 .header__nav-link {
-  font: normal 400 16px/50px "Inika";
-  color: var(--nav-color);
+  font: normal var(--fw-regular) var(--fs-600)/50px var(--ff-secondary);
+  color: var(--clr-neutral-600);
   text-decoration: none;
 }
 
-.header__nav-link:hover {
-  font-weight: 700;
-  color: var(--primary-dark-color);
+.header__nav-link:hover,
+.header__nav-link:focus {
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent-400);
 }
 
-/*-------header end-------*/
-
-/*-------welcome section start-------*/
+/* ------- 5.1.3 - Welcome section ------- */
 
 .welcome {
   margin-top: 134px;
   padding: 62px 0 63px;
-  background-color: var(--bg-color);
 }
 
 .welcome__wrapper {
@@ -353,24 +463,18 @@ h2 {
 
 .welcome__title {
   margin: 36px 0 44px;
-  color: var(--secondary-light-color);
-}
-
-.welcome__title span {
-  color: var(--primary-light-color);
+  color: var(--clr-primary-400);
 }
 
 .welcome__text {
   margin-bottom: 48px;
-  font: 400 20px/35px "Inter";
-  color: var(--secondary-dark-color);
+  font: var(--fw-regular) var(--fs-700)/35px var(--ff-primary);
+  color: var(--clr-primary-700);
 }
 
-/*-------welcome section end-------*/
+/* ------- 5.4 - About section ------- */
 
-/*-------about section start-------*/
-
-#about {
+.about {
   padding: 93px 0 94px;
 }
 
@@ -385,16 +489,12 @@ h2 {
 .about__title {
   width: 463px;
   margin: 68px 0 38px;
-  color: var(--primary-dark-color);
-}
-
-.about__title span {
-  color: var(--primary-light-color);
+  color: var(--clr-accent-400);
 }
 
 .about__text {
-  font: 400 20px/30px "Inter";
-  color: var(--secondary-dark-color);
+  font: var(--fw-regular) var(--fs-700)/30px var(--ff-primary);
+  color: var(--clr-primary-700);
 }
 
 .about__img {
@@ -405,13 +505,11 @@ h2 {
   background-position: center;
 }
 
-/*-------about section end-------*/
+/* ------- 5.1.5 - Service section ------- */
 
-/*-------service section start-------*/
-
-#service {
+.service {
   padding: 40px 0 121px;
-  background-color: var(--bg-color);
+  background-color: var(--clr-neutral-200);
 }
 
 .service__wrapper {
@@ -423,7 +521,7 @@ h2 {
 .service__title {
   width: 306px;
   margin-bottom: 24px;
-  color: var(--primary-light-color);
+  color: var(--clr-accent-700);
 }
 
 .service__buttons_list {
@@ -436,13 +534,11 @@ h2 {
 }
 
 .service__buttons_list .button_active {
-  background: var(--primary-dark-color);
+  background: var(--clr-accent-400);
   color: #fff;
 }
 
-/*-------service section end-------*/
-
-/*-------prices section start-------*/
+/* ------- 5.1.6 - Prices section ------- */
 
 #prices {
   padding: 40px 0 115px;
@@ -469,7 +565,7 @@ h2 {
   width: 332px;
   height: 282px;
   border-radius: 20px;
-  border: var(--block-border);
+  border: var(--bd-block);
 }
 
 .prices__text-block {
@@ -489,7 +585,7 @@ h2 {
 }
 
 .prices__text span {
-  color: var(--primary-light-color);
+  color: var(--clr-accent-700);
 }
 
 .prices__button {
@@ -504,13 +600,11 @@ h2 {
   background-size: cover;
 }
 
-/*-------prices section end-------*/
+/* ------- 5.1.7 - Contacts section ------- */
 
-/*-------contacts section start-------*/
-
-#contacts {
+.contacts {
   padding-top: 53px;
-  background: var(--bg-color);
+  background: var(--clr-neutral-200);
 }
 
 .contacts__wrapper {
@@ -530,16 +624,14 @@ h2 {
   margin: 7px 0 0;
   font-weight: 700;
   font-family: "Inika";
-  color: var(--primary-light-color);
+  color: var(--clr-accent-700);
 }
 
 .contacts__dropdown {
   margin-top: 95px;
 }
 
-/*-------contacts section end-------*/
-
-/*-------footer start-------*/
+/* ------- 5.1.8 - Footer section ------- */
 
 .footer {
   padding: 40px 0;
@@ -596,15 +688,11 @@ h2 {
   height: 32px;
 }
 
-/*-------footer end-------*/
-
-/* -------device layout end------- */
-
-/* ----------------------------------------- */
-
-/* -------tablet layout start------- */
+/* ------- 5.2 - Tablet ------- */
 
 @media (min-width: 768px) and (max-width: 1439px) {
+
+  /* ------- 5.2.1 - Components ------- */
 
   h1 {
     font-size: 35px;
@@ -980,7 +1068,7 @@ h2 {
     width: 100%;
     height: 290px;
     flex-direction: column;
-    background: var(--bg-color);
+    background: var(--clr-neutral-200);
     transition: 0.2s ease-in-out;
   }
 
