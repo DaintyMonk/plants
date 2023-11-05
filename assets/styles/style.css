@@ -280,7 +280,8 @@ svg {
   flex-direction: column;
   width: 330px;
   height: 450px;
-  /* filter: blur(1.5px); */
+  filter: blur(1.5px);
+  z-index: 0;
 }
 
 .card_active {
@@ -395,6 +396,7 @@ svg {
   top: 0;
   width: 100%;
   padding: 42px 0;
+  z-index: 1;
 }
 
 .header__wrapper {
@@ -533,7 +535,7 @@ svg {
   margin-right: 33px;
 }
 
-.service__buttons_list .button_active {
+.service__buttons_list .btn_active {
   background: var(--clr-accent-400);
   color: #fff;
 }
@@ -991,15 +993,15 @@ svg {
     display: block;
   }
 
-  .hamburger.active .hamburger__bar:nth-child(-n+3):nth-child(n+2) {
+  .hamburger_active .hamburger__bar:nth-child(-n+3):nth-child(n+2) {
     opacity: 0;
   }
 
-  .hamburger.active .hamburger__bar:nth-child(1) {
+  .hamburger_active .hamburger__bar:nth-child(1) {
     transform: rotate(45deg) translateX(8px) translateY(8px); 
   }  
 
-  .hamburger.active .hamburger__bar:nth-child(4) {
+  .hamburger_active .hamburger__bar:nth-child(4) {
     transform: rotate(-45deg) translateX(8px) translateY(-8px); 
   }
 
@@ -1072,7 +1074,7 @@ svg {
     transition: 0.2s ease-in-out;
   }
 
-  .header__nav-menu.active {
+  .header__nav-menu.hamburger_active {
     top: 96px;
     overflow: hidden;
   }
