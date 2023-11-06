@@ -40,8 +40,10 @@ CSS TABLE OF CONTENTS
 
 :root {
   /* Colors */
-  --clr-primary-400: hsl(0, 0%, 44%); /* #717171 */
+  --clr-primary-400: hsl(0, 7%, 66%); /* #aea1a1 */
+  --clr-primary-500: hsl(0, 0%, 44%); /* #717171 */
   --clr-primary-700: hsl(0, 2%, 38%); /* #636060 */
+  
 
   --clr-accent-300: hsl(88, 61%, 75%); /* #c1e698 */
   --clr-accent-400: hsl(18, 74%, 54%); /* #e06733 */
@@ -59,6 +61,7 @@ CSS TABLE OF CONTENTS
   --ff-secondary: "Inika", sans-serif;
 
   /* Font weight */
+  --fw-light: 300;
   --fw-regular: 400;
   --fw-bold: 700;
 
@@ -98,6 +101,17 @@ CSS TABLE OF CONTENTS
     url(../fonts/Inika/Inika-Bold.woff2) format("woff2"),
     url(../fonts/Inika/Inika-Bold.woff) format("woff"),
     url(../fonts/Inika/Inika-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Inter"), local("Inter-Regular"), 
+    url(../fonts/Inter/Inter-Light.woff2) format("woff2"),
+    url(../fonts/Inter/Inika-Light.woff) format("woff"),
+    url(../fonts/Inter/Inter-Light.ttf) format("truetype");
 }
 
 @font-face {
@@ -217,7 +231,11 @@ svg {
   font: var(--fw-regular) var(--fs-800)/normal var(--ff-secondary);
 }
 
-.title-accent {
+.text-accent-400 {
+  color: var(--clr-accent-400);
+}
+
+.text-accent-700 {
   color: var(--clr-accent-700);
 }
 
@@ -235,27 +253,27 @@ svg {
 .btn {
   width: 162px;
   height: 50px;
-  border-radius: 5px;
-  border: 1px var(--bd-btn);
-  background: transparent;
   font: var(--fw-regular) var(--fs-700)/normal var(--ff-secondary);
   color: var(--clr-accent-400);
+  background: transparent;
+  border: 1px var(--bd-btn);
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .btn_rounded {
   width: 158px;
   height: 44px;
-  border-radius: 10px;
-  border-width: 2px;
   font: var(--fw-regular) var(--fs-600)/20px var(--ff-primary);
+  border-width: 2px;
+  border-radius: 10px;
 }
 
 .btn:hover,
 .btn:active,
 .btn:focus-visible {
-  background-color: var(--clr-accent-400);
   color: #fff;
+  background-color: var(--clr-accent-400);
 }
 
 .hamburger {
@@ -267,8 +285,8 @@ svg {
   width: 40px;
   height: 2px;
   margin: 0 auto 6px;
+  background: var(--clr-primary-500);
   transition: all 0.3s ease-in-out;
-  background: var(--clr-primary-400);
 }
 
 .hamburger__bar:last-child {
@@ -276,12 +294,12 @@ svg {
 }
 
 .card {
+  z-index: 0;
   display: flex;
   flex-direction: column;
   width: 330px;
   height: 450px;
   filter: blur(1.5px);
-  z-index: 0;
 }
 
 .card_active {
@@ -290,67 +308,136 @@ svg {
 
 .card__img {
   width: 100%;
-  object-fit: cover;
   border-radius: 20px 20px 0 0;
+  object-fit: cover;
 }
 
 .card__text-block {
   height: 100px;
+  text-align: center;
   border: var(--bd-block);
   border-top: 0;
   border-radius: 0 0 20px 20px;
-  text-align: center;
 }
 
 .card__img-text {
   margin: 10px 0 14px;
-  font: 700 20px/20px "Inter";
+  font: var(--fw-bold) var(--fs-700)/20px var(--ff-primary);
   color: var(--clr-accent-400);
 }
 
 .card__img-description {
-  margin: 0;
-  font: 400 16px/20px "Inter";
-  color: var(--clr-primary-400);
+  font: var(--fw-regular) var(--fs-600)/20px var(--ff-primary);
+  color: var(--clr-primary-500);
 }
 
 .accordion {
-  width: 250px;
-  height: 50px;
+  width: 250px; 
+  margin: 32px auto;
   border-radius: 20px;
   background: var(--clr-neutral-200);
-  margin: 0 auto 32px;
+}
+
+.accordion_active {
+  background: var(--clr-neutral-400);
 }
 
 .accordion:first-child {
-  margin-top: 34px;
+  margin-top: 33px;
 }
 
-.accordion__container {
-  padding: 16px 40px;
+.accordion:last-child {
+  margin-bottom: 33px;
+}
+
+.accordion__wrapper {
+  padding: 15px 40px;
+  transition: padding 0.2s;
+}
+
+.accordion_active .accordion__wrapper {
+  padding: 15px 40px 12px 40px;
+}
+
+.accordion__items {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-.accordion__text {
-  font: 700 20px/20px "Inter";
-}
-
-.accordion__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-  border: none;
-  background-color: transparent;
   cursor: pointer;
 }
 
-.accordion__icon {
+.accordion__text {
+  font: var(--fw-bold) var(--fs-700)/20px var(--ff-primary);
+}
+
+.accordion__arrow {
   width: 16px;
   height: 16px;
+  margin: auto 0;
+  background-image: url(../images/prices/accordion_btn_down.svg);
+}
+
+.accordion_active .accordion__arrow {
+  margin-top: 5px;
+  background-image: url(../images/prices/accordion_btn_up.svg);
+}
+
+.accordion__content {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+}
+
+.accordion_active .accordion__content {
+  display: block;
+  height: auto; 
+  padding-top: 16px;
+}
+
+.accordion__content::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 164px;
+  height: 0.5px;
+  background-color: var(--clr-primary-400);
+}
+
+.accordion__description {
+  margin-bottom: 6px;
+  font: var(--fw-light) var(--fs-300)/10px var(--ff-primary);
+  color: #717171;
+}
+
+.accordion__price {
+  margin-bottom: 8px;
+  font: var(--fw-regular) var(--fs-400)/20px var(--ff-primary);
+  color: var(--clr-neutral-700);
+}
+
+.accordion-price_text-big {
+  font-size: var(--fs-600);
+}
+
+.accordion-price_text-small {
+  font-size: var(--fs-400);
+}
+
+.accordion__btn {
+  width: 86px;
+  height: 25px;
+  padding-right: 10px;
+  font: var(--fw-bold) var(--fs-500)/20px var(--ff-primary);
+  color: var(--clr-primary-700); 
+  border: none;
+  border-radius: 10px;
+  background-color: var(--clr-neutral-100);
+  cursor: pointer;
+}
+
+.accordion__btn:hover {
+  color: #fff;
+  background-color: var(--clr-accent-400);
 }
 
 .dropdown {
@@ -370,7 +457,7 @@ svg {
 .dropdown__text {
   font: 400 20px/40px "Inter";
   letter-spacing: 1px;
-  color: var(--clr-primary-400);
+  color: var(--clr-primary-500);
 }
 
 .dropdown__button {
@@ -465,7 +552,7 @@ svg {
 
 .welcome__title {
   margin: 36px 0 44px;
-  color: var(--clr-primary-400);
+  color: var(--clr-primary-500);
 }
 
 .welcome__text {
@@ -521,7 +608,6 @@ svg {
 }
 
 .service__title {
-  width: 306px;
   margin-bottom: 24px;
   color: var(--clr-accent-700);
 }
@@ -537,7 +623,7 @@ svg {
 
 .service__buttons_list .btn_active {
   background: var(--clr-accent-400);
-  color: #fff;
+  color: var(--clr-neutral-100);
 }
 
 /* ------- 5.1.6 - Prices section ------- */
@@ -570,12 +656,14 @@ svg {
   border: var(--bd-block);
 }
 
+.accordion-block_active  {
+  height: auto;
+}
+
 .prices__text-block {
   grid-area: text;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   align-items: end;
   width: 452px;
 }
@@ -583,7 +671,7 @@ svg {
 .prices__text {
   margin-bottom: 40px;
   text-align: right;
-  font: 700 40px/50px "Inter";
+  font: var(--fw-bold) var(--fs-800)/50px var(--ff-primary);
 }
 
 .prices__text span {
@@ -592,7 +680,7 @@ svg {
 
 .prices__button {
   margin-bottom: 39px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 .prices__img {
@@ -1029,8 +1117,8 @@ svg {
     margin-top: 29px;
   }
   
-  .accordion__container {
-    padding: 16px 40px 16px 30px;
+  .accordion__items {
+    padding-left: 30px;
   }
   
   .accordion__text {

@@ -2,6 +2,8 @@ const navMenu = document.querySelector('.header__nav-menu');
 const links = document.querySelectorAll('.header__nav-link');
 const hamb = document.querySelector('.hamburger');
 const cards = document.querySelectorAll('.service__card');
+const accordions = document.querySelectorAll('.prices__accordion');
+const pricesAccordionBlock = document.querySelector('.prices__accordion-block');
 
 // Smooth scrolling
 links.forEach(link => {
@@ -47,3 +49,18 @@ const focusChange = (btn) => {
     }
   });
 }
+
+accordions.forEach(accordion => {
+  accordion.addEventListener('click', () => {
+    accordion.classList.toggle('accordion_active');
+    const activeAccordions = document.querySelectorAll('.accordion_active');
+    console.log(activeAccordions);
+    if (!pricesAccordionBlock.classList.contains('accordion-block_active') && activeAccordions != 0) {
+      pricesAccordionBlock.classList.toggle('accordion-block_active');
+    }
+    else if (activeAccordions.length === 0) {
+      pricesAccordionBlock.classList.toggle('accordion-block_active');
+    }
+  })
+})
+
