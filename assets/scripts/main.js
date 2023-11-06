@@ -51,7 +51,7 @@ const focusChange = (btn) => {
 }
 
 accordions.forEach(accordion => {
-  accordion.addEventListener('click', () => {
+  accordion.querySelector('.accordion__items').addEventListener('click', () => {
     accordion.classList.toggle('accordion_active');
     const activeAccordions = document.querySelectorAll('.accordion_active');
     console.log(activeAccordions);
