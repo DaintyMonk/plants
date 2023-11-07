@@ -239,17 +239,62 @@
         <div class="wrapper flex contacts__wrapper">
           <div class="contacts__img"></div>
           <h2 class="secondary-heading contacts__title">Contact us</h2>
-          <div class="dropdown contacts__dropdown">
-            <div class="dropdown__container">
-              <span class="dropdown__text">City</span>
-              <button class="dropdown__button">
-                <img class="dropdown-icon"
-                     src="./assets/images/contacts/drop_btn_down.svg"
-                     alt="down"
-                     width="16"
-                     height="16"
-                >
-              </button>
+          <div class="contacts__address-container">
+            <div class="select contacts__select">
+              <div class="select__input">
+                <span class="select__text">City</span>
+                <div class="select__arrow"></div>
+              </div>
+              <ul class="select__dropdown" role="list">
+                <li class="select__dropdown-item" data-value="Canandaigua, NY">
+                  <span class="select__item-text">Canandaigua, NY</span>
+                </li>
+                <li class="select__dropdown-item" data-value="New York City">
+                  <span class="select__item-text">New York City</span>                  
+                </li>
+                <li class="select__dropdown-item" data-value="Yonkers, NY">
+                  <span class="select__item-text">Yonkers, NY</span>
+                </li>
+                <li class="select__dropdown-item" data-value="Sherrill, NY">
+                  <span class="select__item-text">Sherrill, NY</span>
+                </li>
+              </ul>
+            </div>
+            <div class="address-card contacts__address-card" id="Canandaigua, NY">
+                <span class="address-card__field">City:</span>
+                <span class="address-card__value">Canandaigua, NY</span>
+                <span class="address-card__field">Phone:</span>
+                <span class="address-card__value">+1 585 393 0001</span>
+                <span class="address-card__field">Office adress:</span>
+                <span class="address-card__value">151 Charlotte Street</span>
+                <button class="btn address__btn">Call us</button>
+            </div>
+            <div class="address-card contacts__address-card" id="New York City">
+              <span class="address-card__field">City:</span>
+              <span class="address-card__value">New York City</span>
+              <span class="address-card__field">Phone:</span>
+              <span class="address-card__value">+1 212 456 0002</span>
+              <span class="address-card__field">Office adress:</span>
+              <span class="address-card__value">9 East 91st Street</span>
+              <button class="btn address__btn">Call us</button>
+            </div>
+            <div class="address-card contacts__address-card" id="Yonkers, NY">
+              <span class="address-card__field">City:</span>
+              <span class="address-card__value">Yonkers, NY</span>
+              <span class="address-card__field">Phone:</span>
+              <span class="address-card__value">+1 914 678 0003</span>
+              <span class="address-card__field">Office adress:</span>
+              <span class="address-card__value">511 Warburton Ave</span>
+              <button class="btn address__btn">Call us</button>
+            </div>
+            <div class="address-card contacts__address-card" id="Sherrill, NY">
+              <span class="address-card__field">City:</span>
+              <span class="address-card__value">Sherrill, NY</span>
+              <span class="address-card__field">Phone:</span>
+              <span class="address-card__value">+1 315 908 0004</span>
+              <span class="address-card__field">Office adress:</span>
+              <span class="address-card__value">14 WEST Noyes BLVD</span>
+              <button class="btn address__btn">Call us</button>
             </div>
           </div>
         </div>

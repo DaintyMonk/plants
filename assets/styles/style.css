@@ -40,10 +40,10 @@ CSS TABLE OF CONTENTS
 
 :root {
   /* Colors */
+  --clr-primary-300: hsl(0, 0%, 85%); /*#d9d9d9 */
   --clr-primary-400: hsl(0, 7%, 66%); /* #aea1a1 */
   --clr-primary-500: hsl(0, 0%, 44%); /* #717171 */
   --clr-primary-700: hsl(0, 2%, 38%); /* #636060 */
-  
 
   --clr-accent-300: hsl(88, 61%, 75%); /* #c1e698 */
   --clr-accent-400: hsl(18, 74%, 54%); /* #e06733 */
@@ -51,8 +51,9 @@ CSS TABLE OF CONTENTS
 
   --clr-neutral-100: hsl(0, 0%, 100%); /* #ffffff */
   --clr-neutral-200: hsl(110, 19%, 94%); /* #edf2ec */
-  --clr-neutral-300: hsl(51, 20%, 86%); /* #e3e1d5 */
-  --clr-neutral-400: hsl(109, 30%, 86%); /* d6e7d2 */
+  --clr-neutral-300: hsl(109, 30%, 86%); /* #d6e7d2 */
+  --clr-neutral-400: hsl(109, 27%, 88%); /* #dce9d9 */
+  --clr-neutral-500: hsl(51, 20%, 86%); /* #e3e1d5 */
   --clr-neutral-600: hsl(120, 33%, 1%); /* #010201 */
   --clr-neutral-700: hsl(0, 0%, 0%); /* #000000 */
 
@@ -75,8 +76,9 @@ CSS TABLE OF CONTENTS
   --fs-900: 2.8125rem;
   
   /* Borders */
-  --bd-block: 1px solid var(--clr-neutral-300);
+  --bd-block: 1px solid var(--clr-neutral-500);
   --bd-btn: solid var(--clr-accent-400);
+  --bd-address: 1px solid var(--clr-neutral-700);
 }
 
 /* ------- 2.0 - Fonts ------- */
@@ -285,7 +287,7 @@ svg {
   width: 40px;
   height: 2px;
   margin: 0 auto 6px;
-  background: var(--clr-primary-500);
+  background-color: var(--clr-primary-500);
   transition: all 0.3s ease-in-out;
 }
 
@@ -335,11 +337,11 @@ svg {
   width: 250px; 
   margin: 32px auto;
   border-radius: 20px;
-  background: var(--clr-neutral-200);
+  background-color: var(--clr-neutral-200);
 }
 
 .accordion_active {
-  background: var(--clr-neutral-400);
+  background-color: var(--clr-neutral-300);
 }
 
 .accordion:first-child {
@@ -374,6 +376,7 @@ svg {
   height: 16px;
   margin: auto 0;
   background-image: url(../images/prices/accordion_btn_down.svg);
+  transition: 0.4s ease-in-out;
 }
 
 .accordion_active .accordion__arrow {
@@ -389,7 +392,6 @@ svg {
 }
 
 .accordion_active .accordion__content {
-  display: block;
   height: auto; 
   padding-top: 16px;
 }
@@ -406,7 +408,7 @@ svg {
 .accordion__description {
   margin-bottom: 6px;
   font: var(--fw-light) var(--fs-300)/10px var(--ff-primary);
-  color: #717171;
+  color: var(--clr-primary-500);
 }
 
 .accordion__price {
@@ -440,40 +442,123 @@ svg {
   background-color: var(--clr-accent-400);
 }
 
-.dropdown {
+.select {
   width: 450px;
   height: 50px;
-  background: #D6E7D2;
+  background-color: #D6E7D2;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  transition: 0.4s;
 }
 
-.dropdown__container {
+.select_active {
+  background-color: var(--clr-accent-300);
+  box-shadow: none;
+}
+
+.select__input {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5px 35px 5px 20px;
+  cursor: pointer;
 }
 
-.dropdown__text {
-  font: 400 20px/40px "Inter";
+.select__text {
+  font: var(--fw-regular) var(--fs-700)/40px var(--ff-primary);
   letter-spacing: 1px;
   color: var(--clr-primary-500);
 }
 
-.dropdown__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.select__arrow {
   width: 16px;
   height: 16px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+  background-image: url(../images/contacts/drop_btn_down.svg);
+  transition: 0.4s ease-in-out;
 }
 
-.dropdown-icon {
-  width: 16px;
-  height: 16px;
+.select_active .select__arrow {
+  background-image: url(../images/contacts/drop_btn_up.svg);
+}
+
+.select__dropdown {
+  height: 0;
+  max-height: 234px;
+  background-color: var(--clr-neutral-400);
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+}
+
+.select_active .select__dropdown {
+  height: auto;
+  padding: 30px 50px 31px 26px;
+}
+
+.select__dropdown-item {
+  position: relative;
+  height: 36px;
+  margin-bottom: 11px;
+}
+
+.select__item-text {
+  font: var(--fw-regular) var(--fs-600)/35px var(--ff-primary);
+  letter-spacing: 0.8px;
+  color: var(--clr-accent-700);
+}
+
+.select__dropdown-item:hover .select__item-text {
+  color: var(--clr-primary-500);
+}
+
+.select__item-text::after {
+  content: "";
+  position: absolute;
+  top: 31px;
+  left: -5px;
+  display: block;
+  width: 380px;
+  height: 1px;
+  background-color: var(--clr-primary-300);
+}
+
+.select__dropdown-item:hover .select__item-text::after {
+  background-color: var(--clr-primary-500);
+}
+
+.address-card {
+  display: none;
+  width: 448px;
+  padding: 17px 35px 32px;
+  border: var(--bd-address);
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.address-card_active {
+  display: grid;
+  grid-template-columns: 126px 1fr;
+  grid-template-rows: 40px 40px 40px 1fr;
+  grid-column-gap: 6px;
+}
+
+.address-card__field {
+  font: var(--fw-regular) var(--fs-600)/40px var(--ff-primary);
+  letter-spacing: 0.8px;
+  color: var(--clr-neutral-700);
+}
+
+.address-card__value {
+  font: var(--fw-regular) var(--fs-600)/40px var(--ff-primary);
+  letter-spacing: 0.8px;
+  color: var(--clr-primary-500);
+}
+
+.address__btn {
+  grid-column: span 2;
+  width: 122px;
+  height: 26px;
+  margin: 18px auto 0;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-300);
 }
 
 /* ------- 5.1.2 - Header ------- */
@@ -542,7 +627,7 @@ svg {
 .welcome__img {
   width: 449px;
   height: 407px;
-  background-image: url(../images/welcome/leafs.png);
+  background: url(../images/welcome/leafs.png);
   background-size: cover;
 }
 
@@ -712,13 +797,17 @@ svg {
 
 .contacts__title {
   margin: 7px 0 0;
-  font-weight: 700;
-  font-family: "Inika";
+  font-weight: var(--fw-bold);
   color: var(--clr-accent-700);
 }
 
-.contacts__dropdown {
+.contacts__select {
   margin-top: 95px;
+}
+
+.contacts__address-card {
+  margin-top: 47px;
+  margin-left: auto;
 }
 
 /* ------- 5.1.8 - Footer section ------- */
@@ -971,7 +1060,7 @@ svg {
     font-size: 40px;
   }
   
-  .contacts__dropdown {
+  .contacts__select {
     order: 1;
     margin: 98px 0 250px;
   }
@@ -1125,12 +1214,12 @@ svg {
     font-size: 15px;
   }
 
-  .dropdown {
+  .select {
     width: 100%;
     max-width: 300px;
   }
   
-  .dropdown__container {
+  .select__input {
     padding: 5px 20px;
   }
 
@@ -1353,7 +1442,7 @@ svg {
   font-size: 25px;
 }
 
-.contacts__dropdown {
+.contacts__select {
   order: 1;
   margin: 82px 0 132px;
 }
