@@ -12,6 +12,9 @@ links.forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
 
+    hamb.classList.remove('hamburger_active');
+    navMenu.classList.remove('hamburger_active');
+
     const href = link.getAttribute('href').substring(1);
     const scrollTarget = document.getElementById(href);
   
@@ -36,8 +39,9 @@ hamb.addEventListener('click', () => {
 const focusChange = (btn) => {
   const activeButton = document.querySelector('.btn_active');
   if (activeButton != null) {
-    activeButton.classList.toggle('btn_active');
+    activeButton.classList.remove('btn_active');
   }
+  
   btn.classList.toggle('btn_active');
 
   const activeCards = document.querySelectorAll('.card_active');
@@ -72,17 +76,25 @@ accordions.forEach(accordion => {
 // Custom select
 select.querySelector('.select__input').addEventListener('click', () => {
   const addressActive = document.querySelector('.address-card_active');
-
+  
   if (addressActive != null) {
     addressActive.classList.remove('address-card_active');
   } 
 
-  select.classList.toggle('select_active');
+  select.classList.add('select_active');
+  select.classList.toggle('select_open');
+  
+  const contactsIMG = document.querySelector('.contacts__img');
+  contactsIMG.classList.add('contacts__img_visible');
 
-  if (!select.classList.contains('select_active')) {
+  if (!select.classList.contains('select_open')) {
     const selectText = select.querySelector('.select__text').innerText;
     if (selectText != 'City') {
       document.getElementById(selectText).classList.add('address-card_active');
+    }
+    else {
+      select.classList.remove('select_active');
+      contactsIMG.classList.remove('contacts__img_visible');
     }
   }
 })
@@ -92,7 +104,7 @@ select.querySelectorAll('.select__dropdown-item').forEach(selectItem => {
   selectItem.addEventListener('click', () => {
     select.querySelector('.select__text').innerText = selectItem.innerText;
 
-    select.classList.remove('select_active');
+    select.classList.remove('select_open');
   
     const selectCity = selectItem.getAttribute('data-value');
     document.getElementById(selectCity).classList.add('address-card_active');

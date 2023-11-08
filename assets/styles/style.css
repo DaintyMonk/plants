@@ -5,34 +5,33 @@ CSS TABLE OF CONTENTS
 2.0 - Fonts
 3.0 - Resets
 4.0 - Utilities
-5.0 - Main
-  5.1 - Desktop
-    5.1.1 - Components
-    5.1.2 - Header
-    5.1.3 - Welcome section
-    5.1.4 - About section
-    5.1.5 - Service section
-    5.1.6 - Prices section
-    5.1.7 - Contacts section
-    5.1.8 - Footer
-  5.2 - Tablet
-    5.1.1 - Components
-    5.2.2 - Header
-    5.2.3 - Welcome section
-    5.2.4 - About section
-    5.2.5 - Service section
-    5.2.6 - Prices section
-    5.2.7 - Contacts section
-    5.2.8 - Footer
-  5.3 - Mobile
-    5.1.1 - Components
-    5.3.2 - Header
-    5.3.3 - Welcome section
-    5.3.4 - About section
-    5.3.5 - Service section
-    5.3.6 - Prices section
-    5.3.7 - Contacts section
-    5.3.8 - Footer
+5.0 - Desktop
+  5.0.1 - Components
+  5.0.2 - Header
+  5.0.3 - Welcome section
+  5.0.4 - About section
+  5.0.5 - Service section
+  5.0.6 - Prices section
+  5.0.7 - Contacts section
+  5.0.8 - Footer
+5.1 - Tablet
+  5.1.1 - Components
+  5.1.2 - Header
+  5.1.3 - Welcome section
+  5.1.4 - About section
+  5.1.5 - Service section
+  5.1.6 - Prices section
+  5.1.7 - Contacts section
+  5.1.8 - Footer
+5.2 - Mobile
+  5.2.1 - Components
+  5.2.2 - Header
+  5.2.3 - Welcome section
+  5.2.4 - About section
+  5.2.5 - Service section
+  5.2.6 - Prices section
+  5.2.7 - Contacts section
+  5.2.8 - Footer
 */
 
 
@@ -67,18 +66,34 @@ CSS TABLE OF CONTENTS
   --fw-bold: 700;
 
   /* Font sizes */
-  --fs-300: 0.625rem;
-  --fs-400: 0.75rem;
-  --fs-500: 0.875rem;
-  --fs-600: 1rem;
-  --fs-700: 1.25rem;
-  --fs-800: 2.5rem;
-  --fs-900: 2.8125rem;
+  --fs-300: 0.625rem; /* 10px */
+  --fs-400: 0.75rem; /* 12px */
+  --fs-500: 0.875rem; /* 14px */
+  --fs-600: 1rem; /* 16px */
+  --fs-700: 1.25rem; /* 20px */
+  --fs-800: 2.5rem; /* 40px */
+  --fs-900: 2.8125rem; /* 45px */
   
   /* Borders */
   --bd-block: 1px solid var(--clr-neutral-500);
   --bd-btn: solid var(--clr-accent-400);
   --bd-address: 1px solid var(--clr-neutral-700);
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  :root {
+    --fs-800: 2.1875rem; /* 35px */
+    --fs-900: 2.5rem; /* 40px */
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --fs-400: 0.875rem; /* 14px */
+    --fs-500: 0.9375rem; /* 15px */
+    --fs-800: 1.5625rem; /* 25px */
+    --fs-900: 1.5625rem; /* 25px */
+  }
 }
 
 /* ------- 2.0 - Fonts ------- */
@@ -213,10 +228,6 @@ svg {
 
 /* ------- 4.0 - Utilities ------- */
 
-.bg-neutral-200 {
-  background-color: var(--clr-neutral-200);
-}
-
 .flex {
   display: flex;
 }
@@ -241,10 +252,12 @@ svg {
   color: var(--clr-accent-700);
 }
 
-/* ------- 5.0 - Main ------- */
-/* ------- 5.1 - Desktop ------- */
+.bg-neutral-200 {
+  background-color: var(--clr-neutral-200);
+}
 
-/* ------- 5.1.1 - Components ------- */
+/* ------- 5.0 - Desktop ------- */
+/* ------- 5.0.1 - Components ------- */
 
 .wrapper {
   width: 1440px;
@@ -267,6 +280,7 @@ svg {
   width: 158px;
   height: 44px;
   font: var(--fw-regular) var(--fs-600)/20px var(--ff-primary);
+  color: var(--clr-neutral-700);
   border-width: 2px;
   border-radius: 10px;
 }
@@ -293,6 +307,18 @@ svg {
 
 .hamburger__bar:last-child {
   margin-bottom: 0;
+}
+
+.hamburger_active .hamburger__bar:nth-child(-n+3):nth-child(n+2) {
+  opacity: 0;
+}
+
+.hamburger_active .hamburger__bar:nth-child(1) {
+  transform: rotate(45deg) translateX(8px) translateY(8px); 
+}  
+
+.hamburger_active .hamburger__bar:nth-child(4) {
+  transform: rotate(-45deg) translateX(8px) translateY(-8px); 
 }
 
 .card {
@@ -348,17 +374,13 @@ svg {
   margin-top: 33px;
 }
 
-.accordion:last-child {
-  margin-bottom: 33px;
-}
-
 .accordion__wrapper {
   padding: 15px 40px;
   transition: padding 0.2s;
 }
 
 .accordion_active .accordion__wrapper {
-  padding: 15px 40px 12px 40px;
+  padding-bottom: 12px;
 }
 
 .accordion__items {
@@ -469,6 +491,12 @@ svg {
   color: var(--clr-primary-500);
 }
 
+.select_active:not(.select_open) .select__text {
+  font-size: var(--fs-600);
+  letter-spacing: 0.8px;
+  transition: 0.4s ease-in-out;
+}
+
 .select__arrow {
   width: 16px;
   height: 16px;
@@ -476,7 +504,7 @@ svg {
   transition: 0.4s ease-in-out;
 }
 
-.select_active .select__arrow {
+.select_open .select__arrow {
   background-image: url(../images/contacts/drop_btn_up.svg);
 }
 
@@ -488,7 +516,7 @@ svg {
   transition: 0.4s ease-in-out;
 }
 
-.select_active .select__dropdown {
+.select_open .select__dropdown {
   height: auto;
   padding: 30px 50px 31px 26px;
 }
@@ -527,7 +555,7 @@ svg {
 .address-card {
   display: none;
   width: 448px;
-  padding: 17px 35px 32px;
+  padding: 18px 34px 30px;
   border: var(--bd-address);
   border-radius: 20px;
   transition: 0.4s;
@@ -535,9 +563,21 @@ svg {
 
 .address-card_active {
   display: grid;
-  grid-template-columns: 126px 1fr;
-  grid-template-rows: 40px 40px 40px 1fr;
+  grid-template: 
+  [row1-start] "field value" 40px [row1-end]
+  [row2-start] "field value" 40px [row2-end]
+  [row3-start] "field value" 40px [row3-end]
+  [row3-start] "button button" 1fr [row3-end]
+  / 126px 1fr;
   grid-column-gap: 6px;
+}
+
+.address-card__fields-block {
+  grid-area: field;
+}
+
+.address-card__value-block {
+  grid-area: value;
 }
 
 .address-card__field {
@@ -553,6 +593,7 @@ svg {
 }
 
 .address__btn {
+  grid-area: button;
   grid-column: span 2;
   width: 122px;
   height: 26px;
@@ -561,7 +602,7 @@ svg {
   font-size: var(--fs-300);
 }
 
-/* ------- 5.1.2 - Header ------- */
+/* ------- 5.0.2 - Header ------- */
 
 .header {
   position: fixed;
@@ -613,7 +654,7 @@ svg {
   color: var(--clr-accent-400);
 }
 
-/* ------- 5.1.3 - Welcome section ------- */
+/* ------- 5.0.3 - Welcome section ------- */
 
 .welcome {
   margin-top: 134px;
@@ -646,7 +687,7 @@ svg {
   color: var(--clr-primary-700);
 }
 
-/* ------- 5.4 - About section ------- */
+/* ------- 5.0.4 - About section ------- */
 
 .about {
   padding: 93px 0 94px;
@@ -679,7 +720,7 @@ svg {
   background-position: center;
 }
 
-/* ------- 5.1.5 - Service section ------- */
+/* ------- 5.0.5 - Service section ------- */
 
 .service {
   padding: 40px 0 121px;
@@ -711,9 +752,9 @@ svg {
   color: var(--clr-neutral-100);
 }
 
-/* ------- 5.1.6 - Prices section ------- */
+/* ------- 5.0.6 - Prices section ------- */
 
-#prices {
+.prices {
   padding: 40px 0 115px;
 }
 
@@ -775,7 +816,7 @@ svg {
   background-size: cover;
 }
 
-/* ------- 5.1.7 - Contacts section ------- */
+/* ------- 5.0.7 - Contacts section ------- */
 
 .contacts {
   padding-top: 53px;
@@ -802,15 +843,14 @@ svg {
 }
 
 .contacts__select {
-  margin-top: 95px;
+  margin: 95px 0 47px;
 }
 
 .contacts__address-card {
-  margin-top: 47px;
   margin-left: auto;
 }
 
-/* ------- 5.1.8 - Footer section ------- */
+/* ------- 5.0.8 - Footer section ------- */
 
 .footer {
   padding: 40px 0;
@@ -824,8 +864,6 @@ svg {
 
 .footer__data-list {
   display: flex;
-  align-items: center;
-  list-style: none;
 }
 
 .footer__data-item:not(:last-child) {
@@ -838,9 +876,7 @@ svg {
 
 .footer__social-list {
   display: flex;
-  align-items: center;
   line-height: normal;
-  list-style: none;
 }
 
 .footer__social-item {
@@ -867,19 +903,11 @@ svg {
   height: 32px;
 }
 
-/* ------- 5.2 - Tablet ------- */
+/* ------- 5.1 - Tablet ------- */
 
 @media (min-width: 768px) and (max-width: 1439px) {
 
-  /* ------- 5.2.1 - Components ------- */
-
-  h1 {
-    font-size: 35px;
-  }
-
-  h2 {
-    font-size: 35px;
-  }
+  /* ------- 5.1.1 - Components ------- */
 
   .wrapper {
     width: 768px;
@@ -899,7 +927,7 @@ svg {
     margin: 0 auto;
   }
   
-  /*-------header start-------*/
+  /* ------- 5.1.2 - Header ------- */
 
   .header {
     padding: 35px 0;
@@ -913,13 +941,11 @@ svg {
     margin-left: 0;
   }
 
-  /*-------header end-------*/
-
-  /*-------welcome section start-------*/
+  /* ------- 5.1.3 - Welcome section ------- */
   
   .welcome {
     margin-top: 117px;
-    padding: 40px 0 70px;
+    padding: 41px 0 70px;
   }
 
   .welcome__wrapper {
@@ -937,18 +963,17 @@ svg {
   
   .welcome__title {
     margin: 0 0 30px;
+    font-size: var(--fs-800);
   }
   
   .welcome__text {
     margin: 0 0 35px 5px;
-    font: 400 16px/25px "Inter";
+    font: var(--fw-regular) var(--fs-600)/25px var(--ff-primary);
   }
 
-  /*-------welcome section end-------*/
+  /* ------- 5.1.4 - About section ------- */
 
-  /*-------about section start-------*/
-
-  #about {
+  .about {
     padding: 40px 0 95px;
   }
   
@@ -973,11 +998,9 @@ svg {
     height: 258px;
   }
 
-  /*-------about section end-------*/
+  /* ------- 5.1.5 - Service section ------- */
 
-  /*-------service section start-------*/
-
-  #service {
+  .service {
     padding: 60px 0 70px;
   }
   
@@ -989,6 +1012,7 @@ svg {
   
   .service__title {
     grid-column: span 2;
+    width: 306px;
     margin-bottom: 5px;
   }
   
@@ -997,11 +1021,9 @@ svg {
     margin: 0 0 2px;
   }
 
-  /*-------service section end-------*/
+  /* ------- 5.1.6 - Prices section ------- */
 
-  /*-------prices section start-------*/
-
-  #prices {
+  .prices {
     padding: 40px 0 88px;
   }
   
@@ -1010,7 +1032,7 @@ svg {
     [row1-start] "title title" [row1-end]
     [row2-start] "accordion text" [row2-end]
     / auto auto;
-    row-gap: 58px;
+    row-gap: 57px;
   }
   
   .prices__title {
@@ -1030,14 +1052,12 @@ svg {
   }
 
   .prices__button {
-    margin-bottom: 34px;
+    margin-bottom: 35px;
   }
 
-  /*-------prices section end-------*/
+  /* ------- 5.1.7 - Contacts section ------- */
 
-  /*-------contact section start-------*/
-
-  #contacts {
+  .contacts {
     padding-top: 40px;
   }
 
@@ -1059,18 +1079,32 @@ svg {
     margin: 0;
     font-size: 40px;
   }
-  
+
   .contacts__select {
     order: 1;
     margin: 98px 0 250px;
   }
 
-  /*-------contact section end-------*/
-  
-  /*-------footer start-------*/
+  .contacts__select.select_active {
+    margin-top: 61px;
+  }
+
+  .contacts__select.select_open {
+    margin-bottom: 287px;
+  }
+
+  .contacts__select.select_active:not(.select_open) {
+    margin-bottom: 61px;
+  }
+
+  .contacts__address-card.address-card_active {
+    margin-bottom: 11px;
+  }
+
+  /* ------- 5.1.8 - Footer ------- */
 
   .footer {
-    padding: 33px 0 27px;
+    padding: 32px 0 28px;
   }
   
   .footer__wrapper {
@@ -1122,28 +1156,14 @@ svg {
     width: 32px;
     height: 32px;
   }
-
-  /*-------footer end-------*/
-
 }
 
-/* -------tablet layout end------- */
-
-/* ----------------------------------------- */
-
-/* -------mobile layout start------- */
+/* ------- 5.2 - Mobile ------- */
 
 @media (max-width: 767px) {
-
-  h1 {
-    font-size: 25px;
-    line-height: 35px;
-  }
-
-  h2 {
-    font-size: 25px;
-  }
-
+  
+  /* ------- 5.2.1 - Components ------- */
+ 
   .wrapper {
     width: 100%;
     max-width: 380px;
@@ -1151,13 +1171,15 @@ svg {
   }
 
   .btn {
-    width: 121px;
+    width: 100%;
+    max-width: 121px;
     height: 35px;
     font-size: 15px;
   }
   
-  .btn-rounded {
-    width: 100px;
+  .btn_rounded {
+    width: 100%;
+    max-width: 100px;
     height: 34px;
     font-size: 10px;
   }
@@ -1170,18 +1192,6 @@ svg {
     display: block;
   }
 
-  .hamburger_active .hamburger__bar:nth-child(-n+3):nth-child(n+2) {
-    opacity: 0;
-  }
-
-  .hamburger_active .hamburger__bar:nth-child(1) {
-    transform: rotate(45deg) translateX(8px) translateY(8px); 
-  }  
-
-  .hamburger_active .hamburger__bar:nth-child(4) {
-    transform: rotate(-45deg) translateX(8px) translateY(-8px); 
-  }
-
   .card {
     width: 100%;
     max-width: 279px;
@@ -1192,26 +1202,27 @@ svg {
   }
   
   .card__img-description {
-    width: 201px;
+    width: 100%;
+    max-width: 201px;
     margin: 0 auto;
   }
 
   .accordion {
-    width: 180px;
-    height: 50px;
-    margin: 0 auto 13px;
+    width: 100%;
+    max-width: 180px;
+    margin: 13px auto;
   }
   
   .accordion:first-child {
     margin-top: 29px;
   }
-  
-  .accordion__items {
+
+  .accordion__wrapper {
     padding-left: 30px;
   }
   
   .accordion__text {
-    font-size: 15px;
+    font-size: var(--fs-500);
   }
 
   .select {
@@ -1223,7 +1234,39 @@ svg {
     padding: 5px 20px;
   }
 
-/*-------header start-------*/
+  .address-card {
+    display: none;
+    width: 100%;
+    max-width: 282px;
+    padding: 23px 23px 22px 36px;
+  }
+  
+  .address-card_active {
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    grid-column-gap: 3px;
+  }
+
+  .address-card_active .address-card__field:last-child {
+    line-height: 20px;
+  }
+
+  .address-card_active .address-card__value:last-child {
+    margin-top: 3px;  
+    margin-left: 9px;
+    line-height: 20px;
+  }
+  
+  .address__btn {
+    width: 100%;
+    max-width: 122px;
+    height: 26px;
+    margin: 19px auto 0;
+    font: var(--fw-bold) var(--fs-300)/normal var(--ff-secondary);
+    color: var(--clr-primary-500);
+  }
+
+  /* ------- 5.2.2 - Header ------- */
 
   .header {
     padding: 34px 0 38px;
@@ -1260,117 +1303,111 @@ svg {
     margin-left: 0;
   }
 
-/*-------header end-------*/
+  /* ------- 5.2.3 - Welcome section ------- */
 
-/*-------welcome section start-------*/
+  .welcome {
+    margin-top: 96px;
+    padding: 24px 0;
+  }
 
-.welcome {
-  margin-top: 96px;
-  padding: 24px 0;
-}
+  .welcome__wrapper {
+    flex-direction: column
+  }
 
-.welcome__wrapper {
-  flex-direction: column
-}
+  .welcome__img {
+    display: none;
+  }
 
-.welcome__img {
-  display: none;
-}
+  .welcome__text-block {
+    width: 100%;
+  }
 
-.welcome__text-block {
-  width: 100%;
-}
+  .welcome__title {
+    margin: 2px 0 20px;
+    line-height: 35px;
+  }
 
-.welcome__title {
-  margin: 2px 0 20px;
-}
+  .welcome__text {
+    margin-bottom: 26px;
+    font: var(--fw-regular) var(--fs-600)/25px var(--ff-primary);
+  }
 
-.welcome__text {
-  margin-bottom: 26px;
-  font: 400 16px/25px "Inter";
-}
+  /* ------- 5.2.4 - About section ------- */
 
-/*-------welcome section end-------*/
+  .about {
+    padding: 30px 0 31px;
+  }
 
-/*-------about section start-------*/
+  .about__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 
-#about {
-  padding: 30px 0 31px;
-}
+  .about__text-block {
+    width: 100%;
+    margin-bottom: 3px;
+  }
 
-.about__wrapper {
-  flex-direction: column;
-  align-items: center;
-}
+  .about__title {
+    width: 100%;
+    max-width: 288px;
+    margin: 0 auto 16px;
+    text-align: center;
+  }
 
-.about__text-block {
-  width: 100%;
-  margin-bottom: 3px;
-}
+  .about__text {
+    font-size: 15px;
+    line-height: 25px;
+  }
 
-.about__title {
-  width: 100%;
-  max-width: 288px;
-  margin: 0 auto 16px;
-  text-align: center;
-}
+  .about__img {
+    width: 100%;
+    max-width: 150px;
+    height: 147px;
+  }
 
-.about__text {
-  font-size: 15px;
-  line-height: 25px;
-}
+  /* ------- 5.2.5 - Service section ------- */
 
-.about__img {
-  width: 150px;
-  height: 147px;
-}
+  .service {
+    padding: 30px 0 27px;
+  }
 
-/*-------about section end-------*/
+  .service__wrapper {
+    grid-template-columns: 1fr;
+    grid-row-gap: 34px;
+  }
 
-/*-------service section start-------*/
+  .service__title {
+    grid-column: span 1;
+    width: 100%;
+    max-width: 187px;
+    margin-bottom: 6px;
+  }
 
-#service {
-  padding: 30px 0 27px;
-}
+  .service__buttons_list {
+    grid-column: span 1;
+    margin-top: 0;
+  }
 
-.service__wrapper {
-  grid-template-columns: 1fr;
-  grid-row-gap: 34px;
-}
+  .service__button {
+    margin-bottom: 9px;
+  }
 
-.service__title {
-  grid-column: span 1;
-  width: 100%;
-  max-width: 187px;
-  margin-bottom: 6px;
-}
+  .service__button:last-child {
+    margin-bottom: 6px;
+  }
 
-.service__buttons_list {
-  grid-column: span 1;
-  margin-top: 0;
-}
+  .service__button:nth-child(odd) {
+    margin-right: 6px;
+  }
 
-.service__button {
-  margin-bottom: 9px;
-}
+  .service__card {
+    margin: 0 auto;
+  }
 
-.service__button:last-child {
-  margin-bottom: 6px;
-}
+  /* ------- 5.2.6 - Prices section ------- */
 
-.service__button:nth-child(odd) {
-  margin-right: 6px;
-}
-
-.service__card {
-  margin: 0 auto;
-}
-
-/*-------service section end-------*/
-
-/*-------prices section start-------*/
-
-#prices {
+.prices {
   padding: 25px 0 40px;
 }
 
@@ -1390,9 +1427,14 @@ svg {
 }
 
 .prices__accordion-block {
-  width: 224px;
+  width: 100%;
+  max-width: 224px;
   height: 235px;
   margin: 0 auto 20px;
+}
+
+.accordion-block_active {
+  height: auto;
 }
 
 .prices__text-block {
@@ -1403,7 +1445,7 @@ svg {
 
 .prices__text {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: var(--fs-700);
   line-height: 35px;
   text-align: center;
 }
@@ -1416,95 +1458,111 @@ svg {
   display: none;
 }
 
-/*-------prices section end-------*/
+  /* ------- 5.2.7 - Contacts section ------- */
 
-/*-------contacts section start-------*/
+  .contacts {
+    padding-top: 25px;
+  }
 
-#contacts {
-  padding-top: 25px;
+  .contacts__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacts__img {
+    order: 2;
+    max-width: 100px;
+    height: 124px;
+    margin-right: 0;
+  }
+
+  .contacts__img_visible {
+    display: none;
+  }
+
+  .contacts__title {  
+    order: 0;
+    margin: 0;
+  }
+
+  .contacts__address-container {
+    width: 100%;
+  }
+
+  .contacts__select {
+    order: 1;
+    margin: 82px auto 132px;
+  }
+
+  .contacts__select.select_active {
+    margin-top: 45px;
+  }
+
+  .contacts__select.select_open {
+    margin-bottom: 294px;
+  }
+
+  .contacts__select.select_active:not(.select_open) {
+    margin-bottom: 49px;
+  }
+
+  .contacts__address-card.address-card_active {
+    margin: 0 auto 33px;
+  }
+
+  /* ------- 5.2.8 - Footer section ------- */
+
+  .footer {
+    padding: 22px 0 16px;
+  }
+
+  .footer__wrapper {
+    flex-direction: column;
+    line-height: normal;
+  }
+
+  .footer__data-list {
+    margin-bottom: 16px;
+  }
+
+  .footer__data-item:not(:last-child) {
+    margin-right: 22px;
+  }
+
+  .footer__text {
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+
+  .footer__social-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    list-style: none;
+  }
+
+  .footer__social-item {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer__social-item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .footer__social-link {
+    text-decoration: none;
+  }
+
+  .footer__social-link i {
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .footer__social-icon {
+    width: 32px;
+    height: 32px;
+  }
 }
-
-.contacts__wrapper {
-  flex-direction: column;
-  align-items: center;
-}
-
-.contacts__img {
-  order: 2;
-  width: 100px;
-  height: 124px;
-  margin-right: 0;
-}
-
-.contacts__title {  
-  order: 0;
-  margin: 0;
-  font-size: 25px;
-}
-
-.contacts__select {
-  order: 1;
-  margin: 82px 0 132px;
-}
-
-/*-------contacts section end-------*/
-
-/*-------footer start-------*/
-
-.footer {
-  padding: 22px 0 16px;
-}
-
-.footer__wrapper {
-  flex-direction: column;
-  line-height: normal;
-}
-
-.footer__data-list {
-  margin-bottom: 16px;
-}
-
-.footer__data-item:not(:last-child) {
-  margin-right: 22px;
-}
-
-.footer__text {
-  margin-left: 0;
-  margin-bottom: 12px;
-}
-
-.footer__social-list {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  line-height: normal;
-  list-style: none;
-}
-
-.footer__social-item {
-  width: 32px;
-  height: 32px;
-}
-
-.footer__social-item:not(:last-child) {
-  margin-right: 20px;
-}
-
-.footer__social-link {
-  text-decoration: none;
-}
-
-.footer__social-link i {
-  text-align: center;
-  font-size: 32px;
-}
-
-.footer__social-icon {
-  width: 32px;
-  height: 32px;
-}
-
-/*-------footer end-------*/
-
-/* -------mobile layout end------- */
